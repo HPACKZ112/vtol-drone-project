@@ -1,0 +1,156 @@
+{
+  "design": {
+    "case_name": "Compact SAR tilt-rotor preliminary study",
+    "evidence_status": "Assumed design inputs; user-confirmed requirements are in project_brief.json",
+    "air_density_kg_m3": 1.225,
+    "gravity_m_s2": 9.81,
+    "rotor_count": 4,
+    "rotor_diameter_m": 0.305,
+    "thrust_to_weight_target": 2.0,
+    "hover_figure_of_merit": 0.65,
+    "motor_esc_efficiency": 0.85,
+    "wing_area_m2": 0.18,
+    "aspect_ratio": 5.0,
+    "oswald_efficiency": 0.8,
+    "zero_lift_drag_coefficient": 0.045,
+    "maximum_lift_coefficient": 1.2,
+    "cruise_speed_m_s": 22.0,
+    "cruise_propeller_efficiency": 0.7,
+    "auxiliary_power_w": 10.0,
+    "battery_voltage_v": 22.2,
+    "battery_capacity_ah": 5.0,
+    "usable_battery_fraction": 0.8,
+    "hover_time_s": 60.0,
+    "transition_time_s": 50.0,
+    "transition_power_factor": 1.2,
+    "cruise_time_s": 1690.0
+  },
+  "mass_budget": [
+    {
+      "component": "Wing and airframe",
+      "quantity": 1,
+      "unit_mass_kg": 0.9,
+      "total_mass_kg": 0.9,
+      "evidence": "assumed",
+      "notes": "Preliminary allowance; geometry and structural mass not designed"
+    },
+    {
+      "component": "Tilting motors",
+      "quantity": 4,
+      "unit_mass_kg": 0.09,
+      "total_mass_kg": 0.36,
+      "evidence": "assumed",
+      "notes": "No motor selected; four shared hover/cruise propulsion units"
+    },
+    {
+      "component": "Propellers",
+      "quantity": 4,
+      "unit_mass_kg": 0.02,
+      "total_mass_kg": 0.08,
+      "evidence": "assumed",
+      "notes": "Diameter 0.305 m; clearance and operating data not checked"
+    },
+    {
+      "component": "ESCs",
+      "quantity": 4,
+      "unit_mass_kg": 0.03,
+      "total_mass_kg": 0.12,
+      "evidence": "assumed",
+      "notes": "Current and voltage ratings to be selected"
+    },
+    {
+      "component": "Battery",
+      "quantity": 1,
+      "unit_mass_kg": 0.7,
+      "total_mass_kg": 0.7,
+      "evidence": "assumed",
+      "notes": "Illustrative 22.2 V 5 Ah pack; no product or discharge data selected"
+    },
+    {
+      "component": "Tilt assemblies and servos",
+      "quantity": 1,
+      "unit_mass_kg": 0.25,
+      "total_mass_kg": 0.25,
+      "evidence": "assumed",
+      "notes": "Combined allowance; mechanism and servo loads remain unverified"
+    },
+    {
+      "component": "Avionics",
+      "quantity": 1,
+      "unit_mass_kg": 0.12,
+      "total_mass_kg": 0.12,
+      "evidence": "assumed",
+      "notes": "Controller and telemetry allowance; no hardware selected"
+    },
+    {
+      "component": "Wiring and connectors",
+      "quantity": 1,
+      "unit_mass_kg": 0.12,
+      "total_mass_kg": 0.12,
+      "evidence": "assumed",
+      "notes": "Power distribution included; no ratings established"
+    },
+    {
+      "component": "Landing gear",
+      "quantity": 1,
+      "unit_mass_kg": 0.1,
+      "total_mass_kg": 0.1,
+      "evidence": "assumed",
+      "notes": "Preliminary allowance"
+    },
+    {
+      "component": "Unselected observation payload",
+      "quantity": 1,
+      "unit_mass_kg": 0.15,
+      "total_mass_kg": 0.15,
+      "evidence": "assumed",
+      "notes": "Placeholder only; camera/sensor and mount not selected by project owner"
+    },
+    {
+      "component": "Design contingency",
+      "quantity": 1,
+      "unit_mass_kg": 0.1,
+      "total_mass_kg": 0.1,
+      "evidence": "assumed",
+      "notes": "Unallocated allowance; not a measured uncertainty"
+    }
+  ],
+  "project_brief": {
+    "confirmed_on": "2026-10-11",
+    "course": "Mechanical Engineering, Year 2",
+    "university": "University of Exeter",
+    "portfolio_focus": "Mechanical engineering summer placements in aerospace",
+    "application_status": "Applications already underway",
+    "mission": "Search-and-rescue observation and basic aerial surveillance concept",
+    "architecture": "Four tilting rotors",
+    "maximum_mass_kg": 5.0,
+    "wingspan_guide_m": 1.0,
+    "wingspan_is_hard_limit": false,
+    "size_guide_scope": "Wingspan only; propellers may extend beyond the wing",
+    "maximum_total_width_m": null,
+    "minimum_flight_time_s": 1800.0,
+    "parts_budget_target_gbp": 500.0,
+    "budget_is_flexible": true,
+    "budget_scope": "Student prototype parts; exact inclusions to establish during component selection",
+    "payload_selection": null,
+    "available_tools": [
+      "Basic 3D printer",
+      "Soldering equipment",
+      "Household DIY tools"
+    ],
+    "current_deliverable": "Design study with simulated hover and forward transition"
+  },
+  "hover_times_s": [
+    60.0,
+    180.0,
+    300.0,
+    600.0
+  ],
+  "comparison_spans_m": [
+    0.9486832980505138,
+    1.1,
+    1.25,
+    1.4
+  ],
+  "comparison_assumptions": "Fixed mass, battery, coefficients and efficiencies; no structural resizing"
+}

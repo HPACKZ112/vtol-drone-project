@@ -7,6 +7,11 @@ or flown aircraft.
 
 ## Build an evidence trail
 
+Begin with the [decision brief](../reports/design-study/decision-brief.md) and
+[evidence map](evidence-map.md). [Contributions](contributions.md) distinguish
+owner choices from AI-assisted artifacts and unconfirmed personal work. The
+[three-lens review](three-lens-review.md) is simulated, not employer endorsement.
+
 Current context: second-year Mechanical Engineering at Exeter, applying now for
 mechanical-engineering summer placements in aerospace. A modest, explainable
 design study is appropriate; a market-ready rescue drone is not the expected

@@ -60,6 +60,24 @@ See [the prioritised review](repository-review.md) for outstanding additions.
 - Next design work can compare larger spans while accounting for mass, structure,
   lift/drag, rotor interference, and fabrication. Assistance: AI-assisted updates.
 
+## 2026-10-11 - Recruitment, leadership and engineering review
+
+- Reviewed the published state at `cffea99be6fc6249e7490cc2b40e027253ce91c4`.
+  Simulated three role lenses with Airbus/Rolls-Royce/BAE discussion angles;
+  no company representatives reviewed or endorsed the project.
+- Added a short generated decision brief, evidence map, contribution record
+  and small design gates. Personal name/work, observation hover time and
+  rotor-layout/CAD/printer inputs were requested, not invented.
+- Added fixed-duration hover duty-cycle cases: five minutes total hover estimates
+  94.1 Wh for a 30-minute mission, above 88.8 Wh assumed usable.
+- Added span comparisons holding area or reference mean chord fixed, with mass
+  and coefficients unchanged. These are not structural/aerodynamic optimisations.
+- Reproduced false-success simulation comparison with no expected CSV tables.
+  Fixed required filenames, missing/extra/empty/malformed tables, finite numerical
+  comparison and colliding mass-case filenames; added regression tests.
+- AI assistance prepared the review, changes, tests and generated outputs.
+  No physical measurements, selected hardware or completed personal CAD were added.
+
 ## Entry template
 
 - Date, author, and time period:

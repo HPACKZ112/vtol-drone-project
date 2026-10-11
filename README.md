@@ -13,6 +13,9 @@ flown, no components have been selected, and no model has been validated against
 measurements. The sensor payload is still open. The simulation assumes ideal
 attitude control; it is not a demonstrated aircraft controller.
 
+For a quick review: [decision brief](reports/design-study/decision-brief.md),
+[evidence map](docs/evidence-map.md), and [contributions](docs/contributions.md).
+
 ## Design targets and first results
 
 | Item | Confirmed target | Current study |
@@ -72,6 +75,22 @@ force sharing for 3 kg and 5 kg cases. Similar curves reflect ideal trim and
 mass-scaled control forces, not equal real-world feasibility. Read the
 [model derivation and limitations](simulation/README.md) before interpreting them.
 The simulation does not calculate endurance, reverse transition, or landing.
+
+## Start a review
+
+- [Decision brief](reports/design-study/decision-brief.md): purpose, result, limits, next decision.
+- [Evidence map](docs/evidence-map.md) and [contributions](docs/contributions.md):
+  what exists, what is assumed, and what personal work is confirmed.
+- [Three-lens review](docs/three-lens-review.md): simulated recruitment, leadership,
+  and senior-engineering views across Airbus, Rolls-Royce and BAE Systems.
+- [Small design gates](docs/design-gates.md): finishable next steps.
+
+![Assumed mission and wingspan trade-offs](reports/design-study/decision_tradeoffs.png)
+
+The baseline assumes one minute total hover. Five minutes total hover within the
+same 30-minute mission estimates 94.1 Wh, exceeding 88.8 Wh usable. Span comparisons
+hold mass and coefficients fixed; they do not establish an optimal wing or include
+structural/packaging consequences.
 
 ## Engineering evidence
 

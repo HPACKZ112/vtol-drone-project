@@ -38,3 +38,7 @@ retained in generated snapshots to preserve the reasoning behind allowances.
 
 Keep private raw logs in `data/raw/private/`; publish only reviewed, anonymised
 copies. Never relabel assumed inputs as measured values.
+
+The design-study input snapshot retains the full brief, component notes, design
+values and comparison settings. Hover/wing alternatives remain assumptions and
+are not owner-selected layouts, mission profiles or sourced parts.

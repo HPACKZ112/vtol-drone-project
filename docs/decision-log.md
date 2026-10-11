@@ -16,6 +16,7 @@ choice as fixed. A provisional choice can be changed when better evidence arrive
 | D09 | 2026-10-11 | Budget and payload? | Flexible student prototype near GBP 500; sensor undecided | Owner's clarification; no purchase or part selection | Priced shortlist and payload task exist |
 | D10 | 2026-10-11 | Which simulation depth now? | Educational point mass with ideal attitude/trim; SciPy ODE solver | Appropriate incremental model for current Python/calculus background | Geometry/inertia permit attitude model |
 | D11 | 2026-10-11 | What does the span guidance mean? | Around 1 m, flexible and wing-only; supersedes D06's below-1-m wording | Owner clarified wing-only scope and that it is a rough guide, not a hard limit | A justified span trade-off or a new owner constraint |
+| D12 | 2026-10-11 | What evidence should the next review prioritise? | Mission duty-cycle and span comparisons now; personal mechanical work next | Three simulated review lenses; mission and layout inputs requested | Owner answers and geometry/component evidence exist |
 
 The 0.15 kg payload allowance and 58.86 N simulated thrust ceiling are analysis
 assumptions, not owner specifications or measured part ratings. This log preserves

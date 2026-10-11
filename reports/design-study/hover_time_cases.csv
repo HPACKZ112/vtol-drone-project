@@ -1,0 +1,5 @@
+total_hover_time_s,transition_time_s,cruise_time_s,total_mission_time_s,mission_energy_wh,remaining_usable_energy_wh,energy_within_assumed_budget
+60.0,50.0,1690.0,1800.0,80.483379,8.316621,True
+180.0,50.0,1570.0,1800.0,87.315359,1.484641,True
+300.0,50.0,1450.0,1800.0,94.147338,-5.347338,False
+600.0,50.0,1150.0,1800.0,111.227287,-22.427287,False

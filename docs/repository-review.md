@@ -4,6 +4,10 @@ Reviewed on 2026-10-11 against commit
 `92dd57e52973da44e41b3958eb5378516d7699c8`, then developed using the owner's answers.
 Priorities describe engineering/portfolio impact, not proof of aircraft safety.
 
+The later [three-lens review](three-lens-review.md) examines the updated repository
+through recruitment, leadership and engineering, and records the next improvements.
+It does not replace this earlier review history.
+
 ## Overall judgement
 
 The original repository was a well-organised starter: units, equations, assumptions,

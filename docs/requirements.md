@@ -32,6 +32,11 @@ The 30-minute allocation is assumed: 60 s total hover, 50 s total transition, an
 forward transition is dynamically simulated. This allocation is not yet a rescue
 mission profile with defined observation time, turns, wind, or reserve policy.
 
+The [hover-time comparison](../reports/design-study/hover_time_cases.csv) now
+shows the consequence of exchanging cruise for observation hover. This does not
+select the final mission profile. [Wing-span comparisons](../reports/design-study/wing_span_cases.csv)
+explore R03 without a hard width rejection and omit structure mass changes.
+
 ## Open engineering requirements
 
 Document full-envelope dimensions and clearance; no overall width limit is set.

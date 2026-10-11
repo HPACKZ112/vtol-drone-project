@@ -37,11 +37,11 @@ From the definition `AR = b^2/S`, span `b = sqrt(AR*S)` and reference mean
 chord `c = S/b`. Wing loading is `W/S`. This does not establish planform,
 thickness, rotor clearance, stiffness, or aerodynamic validity.
 
-The original tutorial's S=0.55 m^2 and AR=6 imply 1.817 m span; that case does
-is substantially wider than the owner's approximately 1 m wingspan guide.
+The original tutorial's S=0.55 m^2 and AR=6 imply 1.817 m span, substantially
+wider than the owner's approximately 1 m wingspan guide.
 The owner clarified that this guide is flexible and applies to the wing only.
-The separate compact candidate
-uses S=0.18 m^2 and AR=5, giving 0.949 m span and 0.190 m mean chord.
+The separate compact candidate uses S=0.18 m^2 and AR=5, giving 0.949 m span
+and 0.190 m mean chord.
 Values in the symbol table above belong to the tutorial, not the compact case.
 
 ```text
@@ -146,7 +146,7 @@ conversion is checked with 100 W for 36 s = 1 Wh. Further checks cover input
 limits, physical trends, and report generation.
 
 `math.fsum` reduces floating-point accumulation error in the mass and energy totals.
-Saved numeric outputs are rounded to six decimal places before report formatting;
+Sizing summaries and CSV outputs are rounded to six decimal places before report formatting;
 the displayed digits do not represent measurement accuracy. A regression check
 ensures tiny floating-point differences cannot change the displayed thrust target.
 
@@ -160,6 +160,25 @@ reports span relative to the flexible guide without a hard span pass/fail,
 compares mass cases, and varies individual assumptions by +/-20%. These are
 illustrative perturbations, not measured uncertainty intervals. Component cost
 and payload suitability explicitly remain unassessed.
+
+### Mission and wing trade-offs
+
+`hover_time_cases.csv` fixes total mission time and transition duration, then
+exchanges cruise for hover. For an exchange dt, the energy change is
+`(P_hover - P_cruise)*dt/3600`. Hover time includes take-off/landing, not just
+observation. The profile remains illustrative until the observation task is confirmed.
+
+`wing_span_cases.csv` applies two geometry comparisons. At fixed area,
+`AR=b^2/S` changes but the stall equation does not. At fixed reference mean chord,
+`S=b*c` changes area and `AR=b/c`. Both update induced and zero-lift drag with
+the same assumed coefficients and cruise speed. Extra structure mass, aeroelastic
+stiffness, rotor interference and Reynolds-number effects are not included.
+Do not read the fixed-mass result as free performance from a wider wing.
+
+The study now saves a complete input snapshot, a short decision brief and a
+trade-off chart/data record. Use `--no-plots` for standard-library numerical
+generation and `--output-dir` to keep a separate comparison. Matching chart
+records are preserved; regenerate charts after plotting/model code changes.
 
 Generated mass snapshots retain evidence notes. Plot-data records identify the
 case, curves, and markers behind each sizing image. When `--no-plots` changes

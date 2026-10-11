@@ -1,0 +1,132 @@
+{
+  "mass_kg": 3.0,
+  "usable_energy_wh": 88.8,
+  "hover_time_cases": [
+    {
+      "total_hover_time_s": 60.0,
+      "transition_time_s": 50.0,
+      "cruise_time_s": 1690.0,
+      "total_mission_time_s": 1800.0,
+      "mission_energy_wh": 80.483379,
+      "remaining_usable_energy_wh": 8.316621,
+      "energy_within_assumed_budget": true
+    },
+    {
+      "total_hover_time_s": 180.0,
+      "transition_time_s": 50.0,
+      "cruise_time_s": 1570.0,
+      "total_mission_time_s": 1800.0,
+      "mission_energy_wh": 87.315359,
+      "remaining_usable_energy_wh": 1.484641,
+      "energy_within_assumed_budget": true
+    },
+    {
+      "total_hover_time_s": 300.0,
+      "transition_time_s": 50.0,
+      "cruise_time_s": 1450.0,
+      "total_mission_time_s": 1800.0,
+      "mission_energy_wh": 94.147338,
+      "remaining_usable_energy_wh": -5.347338,
+      "energy_within_assumed_budget": false
+    },
+    {
+      "total_hover_time_s": 600.0,
+      "transition_time_s": 50.0,
+      "cruise_time_s": 1150.0,
+      "total_mission_time_s": 1800.0,
+      "mission_energy_wh": 111.227287,
+      "remaining_usable_energy_wh": -22.427287,
+      "energy_within_assumed_budget": false
+    }
+  ],
+  "wing_span_cases": [
+    {
+      "comparison": "fixed_area",
+      "wingspan_m": 0.948683,
+      "wing_area_m2": 0.18,
+      "aspect_ratio": 5.0,
+      "mean_chord_m": 0.189737,
+      "stall_speed_m_s": 14.914724,
+      "cruise_power_w": 146.54422,
+      "mission_energy_wh": 80.483379,
+      "remaining_usable_energy_wh": 8.316621
+    },
+    {
+      "comparison": "fixed_area",
+      "wingspan_m": 1.1,
+      "wing_area_m2": 0.18,
+      "aspect_ratio": 6.722222,
+      "mean_chord_m": 0.163636,
+      "stall_speed_m_s": 14.914724,
+      "cruise_power_w": 134.308523,
+      "mission_energy_wh": 74.739399,
+      "remaining_usable_energy_wh": 14.060601
+    },
+    {
+      "comparison": "fixed_area",
+      "wingspan_m": 1.25,
+      "wing_area_m2": 0.18,
+      "aspect_ratio": 8.680556,
+      "mean_chord_m": 0.144,
+      "stall_speed_m_s": 14.914724,
+      "cruise_power_w": 126.294535,
+      "mission_energy_wh": 70.977277,
+      "remaining_usable_energy_wh": 17.822723
+    },
+    {
+      "comparison": "fixed_area",
+      "wingspan_m": 1.4,
+      "wing_area_m2": 0.18,
+      "aspect_ratio": 10.888889,
+      "mean_chord_m": 0.128571,
+      "stall_speed_m_s": 14.914724,
+      "cruise_power_w": 120.715541,
+      "mission_energy_wh": 68.358249,
+      "remaining_usable_energy_wh": 20.441751
+    },
+    {
+      "comparison": "fixed_mean_chord",
+      "wingspan_m": 0.948683,
+      "wing_area_m2": 0.18,
+      "aspect_ratio": 5.0,
+      "mean_chord_m": 0.189737,
+      "stall_speed_m_s": 14.914724,
+      "cruise_power_w": 146.54422,
+      "mission_energy_wh": 80.483379,
+      "remaining_usable_energy_wh": 8.316621
+    },
+    {
+      "comparison": "fixed_mean_chord",
+      "wingspan_m": 1.1,
+      "wing_area_m2": 0.20871,
+      "aspect_ratio": 5.797509,
+      "mean_chord_m": 0.189737,
+      "stall_speed_m_s": 13.850948,
+      "cruise_power_w": 148.469975,
+      "mission_energy_wh": 81.387414,
+      "remaining_usable_energy_wh": 7.412586
+    },
+    {
+      "comparison": "fixed_mean_chord",
+      "wingspan_m": 1.25,
+      "wing_area_m2": 0.237171,
+      "aspect_ratio": 6.588078,
+      "mean_chord_m": 0.189737,
+      "stall_speed_m_s": 12.993341,
+      "cruise_power_w": 154.494213,
+      "mission_energy_wh": 84.215459,
+      "remaining_usable_energy_wh": 4.584541
+    },
+    {
+      "comparison": "fixed_mean_chord",
+      "wingspan_m": 1.4,
+      "wing_area_m2": 0.265631,
+      "aspect_ratio": 7.378648,
+      "mean_chord_m": 0.189737,
+      "stall_speed_m_s": 12.277553,
+      "cruise_power_w": 162.953443,
+      "mission_energy_wh": 88.186597,
+      "remaining_usable_energy_wh": 0.613403
+    }
+  ]
+}

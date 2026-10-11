@@ -3,8 +3,8 @@
 Confirmed targets: four tilting rotors; mass at most 5 kg; at least
 30 minutes total flight time. Around 1 m wingspan is a flexible guide,
 not a hard limit, and applies to the wing only, not the rotor envelope.
-The GBP 500 parts budget is a
-flexible student-project target. The observation payload is unselected.
+The GBP 500 parts budget is a flexible student-project target.
+The observation payload is unselected.
 
 All numerical design inputs and component masses remain assumptions.
 These results screen a concept; they do not demonstrate aircraft performance.
@@ -42,6 +42,32 @@ For the nominal case, 20% higher CD0 raises demand to 88.8 Wh, just over
 the 88.8 Wh usable allowance (88.819 Wh in sensitivity.csv).
 20% lower cruise propeller efficiency raises demand to 96.5 Wh.
 A positive nominal screen is therefore not a robust endurance conclusion.
+
+## Observation hover versus cruise
+
+These cases exchange cruise time for total hover time within a fixed
+30-minute mission, retaining the transition allowance. Total hover includes
+take-off/landing time, not just time available for observation.
+
+| Total hover (min) | Cruise (min) | Mission energy (Wh) | Usable-energy headroom (Wh) |
+| ---: | ---: | ---: | ---: |
+| 1.0 | 28.2 | 80.5 | 8.3 |
+| 3.0 | 26.2 | 87.3 | 1.5 |
+| 5.0 | 24.2 | 94.1 | -5.3 |
+| 10.0 | 19.2 | 111.2 | -22.4 |
+
+This is a mission trade-off, not a demonstrated hover capability.
+The observation task needs owner input before selecting the mission profile.
+
+## Flexible wingspan comparison
+
+wing_span_cases.csv compares the starting span with 1.10, 1.25, and 1.40 m.
+One sweep holds area fixed; the other holds reference mean chord fixed.
+The former changes aspect ratio without changing the stall estimate; the
+latter changes area, stall estimate, and both induced and zero-lift drag.
+All hold mass and coefficients fixed: heavier structure, stiffness,
+rotor interference, Reynolds-number effects, and manufacturing are omitted.
+Do not select a wing solely by the lowest estimated energy.
 
 ## Outstanding feasibility checks
 

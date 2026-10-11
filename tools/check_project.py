@@ -27,6 +27,11 @@ REQUIRED_FILES = [
     "reports/design-study/target_checks.json", "reports/simulation/summary.md",
     "reports/simulation/hover.png", "reports/simulation/transition.png",
     "reports/simulation/plot_inputs.json",
+    "docs/three-lens-review.md", "docs/contributions.md", "docs/evidence-map.md",
+    "docs/design-gates.md", "tests/test_report_checks.py",
+    "reports/design-study/inputs.json", "reports/design-study/decision-brief.md",
+    "reports/design-study/hover_time_cases.csv", "reports/design-study/wing_span_cases.csv",
+    "reports/design-study/decision_tradeoffs.png", "reports/design-study/tradeoff_plot_data.json",
 ]
 
 

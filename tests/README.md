@@ -26,3 +26,8 @@ operating systems or establish scientific accuracy from a chart's appearance.
 These checks verify consistency with documented assumptions. Physical model
 validation requires calibrated, repeatable independent data. No aircraft, flight,
 or measured endurance validation is claimed.
+
+New checks cover constant-duration hover exchanges, wing-comparison invariants,
+baseline reproduction, invalid geometry/duty cycles, and missing/extra/empty/
+malformed/nonfinite simulation tables. Reproducibility now requires all case
+files named by the simulation input snapshot, not just whichever CSVs remain.
