@@ -192,6 +192,13 @@ the recorded data, a mismatched chart is removed instead of left beside a new
 report. Matching records retain existing charts. After editing plotting/model
 code, regenerate plots even if inputs did not change.
 
+## Mechanical layout screen
+
+For continuous disc-sweep bounds, unequal hover allocation and weighted CG/battery
+examples, see the separate [layout method](layout-comparison.md) and
+[results](../reports/layout-study/summary.md). Packaging area is not aerodynamic
+disc area; the screen does not select stable CG, size structure or validate transition.
+
 ## Next measurements
 
 Weigh components and record uncertainty; obtain thrust, current, and voltage data

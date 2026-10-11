@@ -19,6 +19,12 @@ front/rear thrust-line distances; equal loading requires the appropriate moment
 balance, not just left/right symmetry. See the equations in the personal-work
 review before choosing mount positions or a servo.
 
+The [provisional layout screen](layout-comparison.md) compares four assumed
+arrangements with continuous disc envelopes and static mass/hover balance.
+B (widened compact) and C (longer front supports) are study candidates, not an
+owner-selected geometry. Tail/boom strength, component envelopes and wing/tail
+trim remain unverified; the existing simulator is unchanged.
+
 ## Candidate and unresolved geometry
 
 The preliminary candidate has 0.18 m^2 wing area, aspect ratio 5, and four assumed

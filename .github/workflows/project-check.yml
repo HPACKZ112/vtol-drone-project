@@ -30,8 +30,9 @@ jobs:
           python analysis/run_analysis.py --no-plots
           python analysis/run_analysis.py --config data/sar_design.json --mass-budget data/sar_mass_budget.csv --output-dir reports/sar --no-plots
           python -m analysis.run_design_study --no-plots
+          python -m analysis.run_layout_study --no-plots
       - name: Confirm numerical reports match committed inputs
-        run: git diff --exit-code -- reports/example reports/sar reports/design-study
+        run: git diff --exit-code -- reports/example reports/sar reports/design-study reports/layout-study
       - name: Regenerate simulation
         run: python -m simulation.run_simulation --output-dir work/ci-simulation --no-plots
       - name: Check simulation tables
@@ -40,6 +41,7 @@ jobs:
         run: |
           python analysis/run_analysis.py --output-dir work/ci-sizing-plots
           python -m analysis.run_design_study --output-dir work/ci-study-plots
+          python -m analysis.run_layout_study --output-dir work/ci-layout-plots
           python -m simulation.run_simulation --output-dir work/ci-simulation-plots
       - name: Check repository and documentation
         run: python tools/check_project.py

@@ -1,0 +1,5 @@
+layout,name,mass_kg,row_separation_m,rear_spacing_m,wing_and_prop_width_m,disc_sweep_screen_met,reference_cg_x_m,required_battery_x_m,battery_reference_reachable,cg_min_x_m,cg_max_x_m,equal_load_cg_x_m,front_thrust_fraction,front_each_n,rear_each_n,electrical_hover_power_w,extra_hover_power_w,front_support_offset_m,front_support_thrust_moment_nm,tail_half_thrust_moment_nm,boom_rear_thrust_moment_nm
+A,Narrow tail,3.0,0.46,0.3,0.948683,False,0.047434,-0.154425,True,0.041467,0.1208,0.15,0.722969,10.638492,4.076508,377.307214,25.803609,0.08,0.851079,0.611476,1.55122
+B,Widened compact,3.0,0.46,0.4,0.948683,True,0.047434,-0.154425,True,0.041467,0.1208,0.15,0.722969,10.638492,4.076508,377.307214,25.803609,0.08,0.851079,0.815302,1.55122
+C,Longer front supports,3.0,0.7,0.5,1.005,True,0.047434,-0.060568,True,0.019567,0.0989,0.05,0.503665,7.411438,7.303562,351.510488,0.006883,0.3,2.223431,1.825891,3.071343
+D,Long tail,3.0,0.75,0.6,1.045,True,0.047434,-0.341282,False,0.085067,0.1644,0.275,0.803421,11.822342,2.892658,399.89001,48.386404,0.1,1.182234,0.867797,2.662769

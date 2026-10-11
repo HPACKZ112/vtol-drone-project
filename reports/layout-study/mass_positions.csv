@@ -1,0 +1,61 @@
+layout,component,group,mass_kg,x_m
+A,Wing and airframe,main structure,0.6,0.06
+A,Wing and airframe,tail and boom,0.3,0.209
+A,Tilting motors,front pair,0.18,-0.08
+A,Tilting motors,rear pair,0.18,0.38
+A,Propellers,front pair,0.04,-0.08
+A,Propellers,rear pair,0.04,0.38
+A,Tilt assemblies and servos,front pair,0.125,-0.08
+A,Tilt assemblies and servos,rear pair,0.125,0.38
+A,ESCs,central allowance,0.12,0.08
+A,Avionics,central allowance,0.12,0.08
+A,Wiring and connectors,central allowance,0.12,0.1
+A,Landing gear,central allowance,0.1,0.1
+A,Unselected observation payload,central allowance,0.15,-0.02
+A,Design contingency,central allowance,0.1,0.1
+A,Battery,reference-CG trial,0.7,-0.154425
+B,Wing and airframe,main structure,0.6,0.06
+B,Wing and airframe,tail and boom,0.3,0.209
+B,Tilting motors,front pair,0.18,-0.08
+B,Tilting motors,rear pair,0.18,0.38
+B,Propellers,front pair,0.04,-0.08
+B,Propellers,rear pair,0.04,0.38
+B,Tilt assemblies and servos,front pair,0.125,-0.08
+B,Tilt assemblies and servos,rear pair,0.125,0.38
+B,ESCs,central allowance,0.12,0.08
+B,Avionics,central allowance,0.12,0.08
+B,Wiring and connectors,central allowance,0.12,0.1
+B,Landing gear,central allowance,0.1,0.1
+B,Unselected observation payload,central allowance,0.15,-0.02
+B,Design contingency,central allowance,0.1,0.1
+B,Battery,reference-CG trial,0.7,-0.154425
+C,Wing and airframe,main structure,0.6,0.06
+C,Wing and airframe,tail and boom,0.3,0.22
+C,Tilting motors,front pair,0.18,-0.3
+C,Tilting motors,rear pair,0.18,0.4
+C,Propellers,front pair,0.04,-0.3
+C,Propellers,rear pair,0.04,0.4
+C,Tilt assemblies and servos,front pair,0.125,-0.3
+C,Tilt assemblies and servos,rear pair,0.125,0.4
+C,ESCs,central allowance,0.12,0.08
+C,Avionics,central allowance,0.12,0.08
+C,Wiring and connectors,central allowance,0.12,0.1
+C,Landing gear,central allowance,0.1,0.1
+C,Unselected observation payload,central allowance,0.15,-0.02
+C,Design contingency,central allowance,0.1,0.1
+C,Battery,reference-CG trial,0.7,-0.060568
+D,Wing and airframe,main structure,0.6,0.06
+D,Wing and airframe,tail and boom,0.3,0.3575
+D,Tilting motors,front pair,0.18,-0.1
+D,Tilting motors,rear pair,0.18,0.65
+D,Propellers,front pair,0.04,-0.1
+D,Propellers,rear pair,0.04,0.65
+D,Tilt assemblies and servos,front pair,0.125,-0.1
+D,Tilt assemblies and servos,rear pair,0.125,0.65
+D,ESCs,central allowance,0.12,0.08
+D,Avionics,central allowance,0.12,0.08
+D,Wiring and connectors,central allowance,0.12,0.1
+D,Landing gear,central allowance,0.1,0.1
+D,Unselected observation payload,central allowance,0.15,-0.02
+D,Design contingency,central allowance,0.1,0.1
+D,Battery,reference-CG trial,0.7,-0.341282

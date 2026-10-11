@@ -15,6 +15,7 @@ Year 2 Mechanical Engineering at the University of Exeter is confirmed.
 | Rough four-rotor aircraft sketch | Owner-identified personal work; unscaled concept | [Original sketch](evidence/layout-sketch.jpg) |
 | Rear rotors on horizontal tail; all four tilt forward | Owner confirmed after the sketch review | [Architecture](architecture.md), [D13](decision-log.md) |
 | Typed transcription, units, numerical examples and equation checks | Prepared with AI assistance, not claimed as owner-completed hand calculations | [Personal-work review](personal-work.md), [tests](../tests/test_calculations.py) |
+| Provisional dimensions, disc sweep and mass-CG comparison | AI-assisted study requested by owner; no build geometry selected | [Methods](layout-comparison.md), [results](../reports/layout-study/summary.md) |
 | Numerical hand workings, CAD, code revisions or part research | No such personal artifacts supplied yet | Add only after confirmation and a linked artifact |
 | Hardware measurements, assembled aircraft, flight tests or measured endurance | No such evidence supplied | No results claimed |
 | External company review/endorsement | None | Three-lens review is explicitly simulated |

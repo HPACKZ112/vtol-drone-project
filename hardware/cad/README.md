@@ -11,3 +11,7 @@ The [owner's rough sketch](../../docs/personal-work.md) is the initial concept,
 not CAD or a dimensioned drawing. The rear rotors are intended to mount on the
 horizontal tail, and all four tilt forward. Develop rotor centres, battery/CG,
 hinge geometry and the tail/boom load path before treating that layout as buildable.
+
+The [layout study](../../reports/layout-study/summary.md) has mathematical disc
+envelopes and trial mass stations, not CAD solids or approved build dimensions.
+Revisit real components, mounting and structure before using a trial as a model brief.

@@ -34,6 +34,13 @@ REQUIRED_FILES = [
     "reports/design-study/decision_tradeoffs.png", "reports/design-study/tradeoff_plot_data.json",
     "docs/personal-work.md", "docs/evidence/layout-sketch.jpg",
     "docs/evidence/hover-hand-calculation.jpg",
+    "data/provisional_layouts.json", "analysis/layout.py", "analysis/run_layout_study.py",
+    "tests/test_layout.py", "docs/layout-comparison.md", "reports/layout-study/summary.md",
+    "reports/layout-study/comparison.csv", "reports/layout-study/clearances.csv",
+    "reports/layout-study/mass_positions.csv", "reports/layout-study/battery_sweep.csv",
+    "reports/layout-study/inputs.json", "reports/layout-study/rotor_envelope.json",
+    "reports/layout-study/layouts.png", "reports/layout-study/rotor_sweep.png",
+    "reports/layout-study/weight_distribution.png", "reports/layout-study/plot_inputs.json",
 ]
 
 

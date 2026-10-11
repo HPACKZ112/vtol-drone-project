@@ -61,6 +61,7 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 python analysis/run_analysis.py --config data/sar_design.json --mass-budget data/sar_mass_budget.csv --output-dir reports/sar
 python -m analysis.run_design_study
+python -m analysis.run_layout_study
 python -m simulation.run_simulation
 python -m unittest discover -s tests -v
 python tools/check_project.py
@@ -106,6 +107,13 @@ structural/packaging consequences.
 
 ## Engineering evidence
 
+The [provisional layout comparison](reports/layout-study/summary.md) examines
+rotor tilt envelopes, mass stations and battery travel. It shortlists a widened
+compact layout and a longer-front-support alternative for further analysis,
+not manufacture. Read the [method and limitations](docs/layout-comparison.md).
+
+![Provisional layout alternatives, not build specifications](reports/layout-study/layouts.png)
+
 1. [Project brief](docs/project-brief.md) and [requirements](docs/requirements.md).
 2. [Architecture](docs/architecture.md) and [decision log](docs/decision-log.md).
 3. [Sizing equations](docs/calculations.md) and [simulation model](simulation/README.md).
@@ -120,6 +128,7 @@ data/                  Confirmed brief, assumed candidate, and tutorial inputs
 simulation/            Five-state point-mass hover/forward-transition model
 reports/sar/           Candidate sizing outputs
 reports/design-study/  Mass cases, sensitivity, and target screen
+reports/layout-study/  Disc sweep, trial clearances, CG and battery-position cases
 reports/simulation/    Simulation input snapshots, tables, and plots
 reports/example/       Original tutorial outputs, not the compact aircraft
 docs/                  Requirements, methods, review, decisions, and safety

@@ -132,6 +132,10 @@ the current aggregate-force simulator.
 
 ## Next personal revision
 
+The [requested layout comparison](layout-comparison.md) now supplies AI-assisted
+trial dimensions, sweep diagrams and mass/CG examples. These are not dimensions
+extracted from this image or a completed personal CAD/load design.
+
 1. Substitute the 3 kg values by hand with units, then compare with the table;
    retain the workings and explain any discrepancy. Repeat at 5 kg if useful.
 2. Add an origin, axes, rotor centres, wing span/chord,

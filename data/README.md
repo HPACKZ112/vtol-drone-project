@@ -29,6 +29,13 @@ component names, nonempty evidence, positive integer quantities, and positive
 finite masses. Extra/missing cells and duplicate columns are rejected. Notes are
 retained in generated snapshots to preserve the reasoning behind allowances.
 
+## Provisional layout inputs
+
+`provisional_layouts.json` supplies AI-assisted trial dimensions and mass stations
+for `python -m analysis.run_layout_study`, not dimensions read from the sketch.
+The candidate wing, rotor/efficiency inputs and mass budget are reused assumptions.
+Its 20 mm planning gap and 25% chord comparison CG are not verified flight limits.
+
 ## Future measurement records
 
 - Instrument, calibration, resolution, uncertainty, and repeated readings.

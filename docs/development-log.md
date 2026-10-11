@@ -98,6 +98,27 @@ See [the prioritised review](repository-review.md) for outstanding additions.
   prepared with AI assistance. Personal numerical workings, CAD and measurements
   are still to be supplied; preferred public name is still open.
 
+## 2026-10-11 - Provisional sweep and mass-distribution comparison
+
+- Owner requested comparisons based on swept space and weight distribution.
+  Added four labelled trial geometries; dimensions are AI-assisted assumptions,
+  not extracted from the rough sketch.
+- Retained four forward tilts, tail-mounted rear pair, existing wing reference
+  and assumed 3 kg budget. Derived continuous plan projection and 3D disc bounds
+  for an axial hub offset and lateral tilt hinge.
+- Compared rotor, boom/body and surface gaps using exact spacing and conservative
+  bounds. The 20 mm gap is not a validated safe minimum; motor/mount/linkage and
+  blade flex are omitted.
+- Calculated assumed mass stations, battery travel and thrust sharing at a common
+  CG datum, not a verified stable CG. A has 5 mm rear-disc overlap. B/C meet the
+  limited disc screen and can reach the datum; D cannot with these mass stations.
+- Recommended B as first compact study and C as comparison, pending owner choice.
+  B needs about 72/28 thrust sharing; C nearly 50/50 but larger front-support and
+  tail/boom rotor-thrust moment indicators.
+- Added diagrams, snapshots, CSVs and independent area/moment tests. SAR sizing
+  and transition model unchanged. Python, dimensions, diagrams and review are
+  AI-assisted; no personal CAD, selected mechanism or physical validation added.
+
 ## Entry template
 
 - Date, author, and time period:

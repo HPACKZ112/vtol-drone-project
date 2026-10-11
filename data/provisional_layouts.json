@@ -1,0 +1,63 @@
+{
+  "evidence_status": "AI-assisted provisional dimensions and mass positions, not dimensions inferred from the owner sketch",
+  "hub_axial_offset_m": 0.04,
+  "hinge_height_m": 0.06,
+  "planning_clearance_m": 0.02,
+  "surface_thickness_m": 0.02,
+  "tail_chord_m": 0.12,
+  "tail_leading_edge_offset_m": 0.08,
+  "fuselage_half_width_m": 0.08,
+  "fuselage_forward_x_m": -0.22,
+  "fuselage_aft_x_m": 0.22,
+  "fuselage_half_height_m": 0.04,
+  "boom_half_width_m": 0.0125,
+  "battery_min_x_m": -0.18,
+  "battery_max_x_m": 0.16,
+  "cg_reference_chord_fraction": 0.25,
+  "main_structure_x_m": 0.06,
+  "tail_boom_centre_fraction": 0.55,
+  "esc_x_m": 0.08,
+  "avionics_x_m": 0.08,
+  "wiring_x_m": 0.10,
+  "landing_gear_x_m": 0.10,
+  "payload_x_m": -0.02,
+  "contingency_x_m": 0.10,
+  "layouts": [
+    {
+      "id": "A",
+      "name": "Narrow tail",
+      "front_x_m": -0.08,
+      "rear_x_m": 0.38,
+      "front_spacing_m": 0.60,
+      "rear_spacing_m": 0.30,
+      "tail_span_m": 0.36
+    },
+    {
+      "id": "B",
+      "name": "Widened compact",
+      "front_x_m": -0.08,
+      "rear_x_m": 0.38,
+      "front_spacing_m": 0.60,
+      "rear_spacing_m": 0.40,
+      "tail_span_m": 0.48
+    },
+    {
+      "id": "C",
+      "name": "Longer front supports",
+      "front_x_m": -0.30,
+      "rear_x_m": 0.40,
+      "front_spacing_m": 0.70,
+      "rear_spacing_m": 0.50,
+      "tail_span_m": 0.60
+    },
+    {
+      "id": "D",
+      "name": "Long tail",
+      "front_x_m": -0.10,
+      "rear_x_m": 0.65,
+      "front_spacing_m": 0.74,
+      "rear_spacing_m": 0.60,
+      "tail_span_m": 0.70
+    }
+  ]
+}

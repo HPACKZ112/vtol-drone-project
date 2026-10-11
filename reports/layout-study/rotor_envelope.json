@@ -1,0 +1,10 @@
+{
+  "disc_area_m2": 0.073062,
+  "plan_sweep_area_m2": 0.075299,
+  "bounding_sphere_radius_m": 0.157659,
+  "x_min_relative_hinge_m": -0.157659,
+  "x_max_relative_hinge_m": 0.1525,
+  "y_half_extent_m": 0.1525,
+  "z_min_relative_hinge_m": -0.1525,
+  "z_max_relative_hinge_m": 0.157659
+}

@@ -14,6 +14,7 @@ A navigation aid, not a maturity score or aircraft approval.
 | Numerical checks pass | Tests and GitHub workflow | Software verification | Not aircraft validation |
 | Personal hover equation sheet and rough layout exist | [Originals and review](personal-work.md), [contributions](contributions.md) | Owner-identified work | Numerical hand substitutions, dimensions and load diagrams |
 | Rear pair on horizontal tail; all four tilt forward | [Architecture](architecture.md), [D13](decision-log.md) | Owner design intent | CG, clearance, tail/boom strength and tilt mechanism evidence |
+| Provisional disc sweep and longitudinal CG compared | [Layout study](../reports/layout-study/summary.md) | Assumed geometry/static screening | Selected dimensions, component clearance, structure, cruise trim and 3D/moving CG |
 | Hardware/cost/sensor meet targets | [BOM](../hardware/bom.md) | Not assessed | Sourced selections, budget scope, measurements |
 
 Use confirmed requirement, assumed, modelled, verified implementation, and measured
