@@ -14,6 +14,13 @@ they taught you as well as successful results.
 - Limit: no component selection, hardware measurements, or flight evidence added.
 - Next task: confirm requirements and compare tilt-rotor with tilt-wing.
 
+### Verification correction
+
+The first GitHub run passed all equation tests but exposed a 0.01 N difference in
+the displayed peak thrust target between Python 3.11 and 3.12. Improved summation
+and consistent report rounding remove the formatting difference. A regression
+test covers values immediately either side of the rounding boundary.
+
 ## Entry template
 
 - Date, author, and time period:

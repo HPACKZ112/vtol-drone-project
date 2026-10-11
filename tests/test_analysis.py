@@ -8,7 +8,8 @@ import sys
 import tempfile
 import unittest
 
-from analysis.run_analysis import ROOT, calculate_case, load_config, load_mass_budget
+from analysis.run_analysis import (ROOT, calculate_case, load_config,
+                                   load_mass_budget, sensitivity_tables, write_reports)
 
 
 class AnalysisTests(unittest.TestCase):
@@ -89,6 +90,19 @@ class AnalysisTests(unittest.TestCase):
                 self.assertEqual(len(list(csv.DictReader(stream))), 3)
             self.assertTrue((output / "summary.md").is_file())
             self.assertFalse((output / "power_sensitivity.png").exists())
+
+    def test_report_formatting_ignores_insignificant_float_differences(self):
+        summary, segments = calculate_case(self.config, self.mass_kg)
+        mass_rows, speed_rows = sensitivity_tables(self.config, self.mass_kg)
+        reports = []
+        for target in (14.715 - 1e-12, 14.715 + 1e-12):
+            with tempfile.TemporaryDirectory() as directory:
+                varied_summary = summary.copy()
+                varied_summary["target_peak_thrust_per_rotor_n"] = target
+                write_reports(directory, self.config, self.masses, varied_summary,
+                              segments, mass_rows, speed_rows)
+                reports.append((Path(directory) / "summary.md").read_text(encoding="utf-8"))
+        self.assertEqual(reports[0], reports[1])
 
 
 if __name__ == "__main__":

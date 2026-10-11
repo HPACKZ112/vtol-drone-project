@@ -123,6 +123,11 @@ and disc area 1 m^2 give induced velocity 2 m/s and ideal power 16 W. Energy
 conversion is checked with 100 W for 36 s = 1 Wh. Further checks cover input
 limits, physical trends, and report generation.
 
+`math.fsum` reduces floating-point accumulation error in the mass and energy totals.
+Saved numeric outputs are rounded to six decimal places before report formatting;
+the displayed digits do not represent measurement accuracy. A regression check
+ensures tiny floating-point differences cannot change the displayed thrust target.
+
 The mass sweep varies mass from 70% to 130% of baseline with rotor size fixed.
 The speed sweep samples above 1.1 times the estimated stall speed and holds all
 other inputs fixed. That lower bound is for plotting only. The model does not

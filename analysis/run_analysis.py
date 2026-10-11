@@ -3,6 +3,7 @@
 import argparse
 import csv
 import json
+import math
 from pathlib import Path
 
 if __package__:
@@ -110,7 +111,7 @@ def calculate_case(config, mass_kg):
     ]
     for segment in segments:
         segment["energy_wh"] = calc.segment_energy_wh(segment["power_w"], segment["duration_s"])
-    mission_energy = sum(segment["energy_wh"] for segment in segments)
+    mission_energy = math.fsum(segment["energy_wh"] for segment in segments)
     summary = {
         "case_name": config["case_name"],
         "evidence_status": config["evidence_status"],
@@ -197,6 +198,8 @@ def write_reports(output_dir, config, mass_rows, summary, segments,
     write_csv(output_dir / "mass_sensitivity.csv", mass_sensitivity)
     write_csv(output_dir / "cruise_sensitivity.csv", cruise_sensitivity)
 
+    # Format the report from the same rounded values stored in summary.json.
+    summary = rounded
     status = "Within the assumed energy budget" if summary["mission_energy_within_budget"] else "Exceeds the assumed energy budget"
     lines = [
         "# Worked example results", "", f"Case: {config['case_name']}", "",
@@ -284,7 +287,7 @@ def main():
     try:
         config = load_config(args.config)
         masses = load_mass_budget(args.mass_budget)
-        mass_kg = sum(row["total_mass_kg"] for row in masses)
+        mass_kg = math.fsum(row["total_mass_kg"] for row in masses)
         summary, segments = calculate_case(config, mass_kg)
         mass_rows, speed_rows = sensitivity_tables(config, mass_kg)
         write_reports(args.output_dir, config, masses, summary, segments, mass_rows, speed_rows)
