@@ -1,0 +1,163 @@
+{
+  "case_name": "Illustrative four-rotor tilt-rotor study",
+  "mass_kg": 3.0,
+  "hover_power_w": 351.503605,
+  "cruise_speed_m_s": 18.0,
+  "cruise_power_w": 174.506917,
+  "mass_sensitivity": [
+    {
+      "mass_kg": 2.1,
+      "hover_power_w": 210.005691
+    },
+    {
+      "mass_kg": 2.4,
+      "hover_power_w": 254.360088
+    },
+    {
+      "mass_kg": 2.7,
+      "hover_power_w": 301.58089
+    },
+    {
+      "mass_kg": 3.0,
+      "hover_power_w": 351.503605
+    },
+    {
+      "mass_kg": 3.3,
+      "hover_power_w": 403.989203
+    },
+    {
+      "mass_kg": 3.6,
+      "hover_power_w": 458.918147
+    },
+    {
+      "mass_kg": 3.9,
+      "hover_power_w": 516.186224
+    }
+  ],
+  "cruise_sensitivity": [
+    {
+      "speed_m_s": 9.385616,
+      "cruise_power_w": 61.595565
+    },
+    {
+      "speed_m_s": 10.272763,
+      "cruise_power_w": 65.514514
+    },
+    {
+      "speed_m_s": 11.159909,
+      "cruise_power_w": 71.088583
+    },
+    {
+      "speed_m_s": 12.047055,
+      "cruise_power_w": 78.331898
+    },
+    {
+      "speed_m_s": 12.934201,
+      "cruise_power_w": 87.283992
+    },
+    {
+      "speed_m_s": 13.821347,
+      "cruise_power_w": 98.001651
+    },
+    {
+      "speed_m_s": 14.708493,
+      "cruise_power_w": 110.553712
+    },
+    {
+      "speed_m_s": 15.595639,
+      "cruise_power_w": 125.017636
+    },
+    {
+      "speed_m_s": 16.482785,
+      "cruise_power_w": 141.477184
+    },
+    {
+      "speed_m_s": 17.369932,
+      "cruise_power_w": 160.020811
+    },
+    {
+      "speed_m_s": 18.257078,
+      "cruise_power_w": 180.740526
+    },
+    {
+      "speed_m_s": 19.144224,
+      "cruise_power_w": 203.731065
+    },
+    {
+      "speed_m_s": 20.03137,
+      "cruise_power_w": 229.089292
+    },
+    {
+      "speed_m_s": 20.918516,
+      "cruise_power_w": 256.913742
+    },
+    {
+      "speed_m_s": 21.805662,
+      "cruise_power_w": 287.304288
+    },
+    {
+      "speed_m_s": 22.692808,
+      "cruise_power_w": 320.361873
+    },
+    {
+      "speed_m_s": 23.579954,
+      "cruise_power_w": 356.188313
+    },
+    {
+      "speed_m_s": 24.4671,
+      "cruise_power_w": 394.886135
+    },
+    {
+      "speed_m_s": 25.354247,
+      "cruise_power_w": 436.558458
+    },
+    {
+      "speed_m_s": 26.241393,
+      "cruise_power_w": 481.308888
+    },
+    {
+      "speed_m_s": 27.128539,
+      "cruise_power_w": 529.24144
+    },
+    {
+      "speed_m_s": 28.015685,
+      "cruise_power_w": 580.460473
+    },
+    {
+      "speed_m_s": 28.902831,
+      "cruise_power_w": 635.070638
+    },
+    {
+      "speed_m_s": 29.789977,
+      "cruise_power_w": 693.176836
+    },
+    {
+      "speed_m_s": 30.677123,
+      "cruise_power_w": 754.884176
+    },
+    {
+      "speed_m_s": 31.564269,
+      "cruise_power_w": 820.297953
+    },
+    {
+      "speed_m_s": 32.451416,
+      "cruise_power_w": 889.523618
+    },
+    {
+      "speed_m_s": 33.338562,
+      "cruise_power_w": 962.666759
+    },
+    {
+      "speed_m_s": 34.225708,
+      "cruise_power_w": 1039.833082
+    },
+    {
+      "speed_m_s": 35.112854,
+      "cruise_power_w": 1121.128397
+    },
+    {
+      "speed_m_s": 36.0,
+      "cruise_power_w": 1206.658605
+    }
+  ]
+}

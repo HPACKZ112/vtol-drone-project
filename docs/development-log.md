@@ -21,6 +21,33 @@ the displayed peak thrust target between Python 3.11 and 3.12. Improved summatio
 and consistent report rounding remove the formatting difference. A regression
 test covers values immediately either side of the rounding boundary.
 
+## 2026-10-11 - Owner requirements and repository review
+
+- Owner supplied course/year, existing Python/maths background, aerospace-placement
+  audience, tools, and design-study/simulation scope. Applications are already underway.
+- Confirmed four-tilt layout, 5 kg maximum, sub-1-m wing, 30-minute target, SAR/basic
+  surveillance mission, flexible student budget, and no selected camera/sensor.
+- Review of commit `92dd57e52973da44e41b3958eb5378516d7699c8` identified a tutorial
+  geometry mismatch and missing mechanical/dynamics evidence. It did not establish
+  that the concept is physically feasible.
+- Reproduced and corrected unknown/duplicate JSON keys, malformed CSV handling,
+  lost mass-budget notes, and stale sizing charts; added regression tests.
+- Added an explicitly assumed compact candidate and sensitivity/target checks.
+  Nominal 3 kg estimates 80.5 Wh demand against 88.8 Wh usable; 5 kg estimates
+  133.5 Wh with the same battery. This is a conditional screen, not flight evidence.
+- Added a documented point-mass hover/forward-transition model using SciPy, plus
+  equilibrium, thrust/rate-limit, recovery, and solver-refinement checks.
+- Both masses use a shared assumed thrust ceiling, rather than silently upgrading
+  available hardware thrust for the heavier case. Ideal wing trim is still a limitation.
+- Expanded automated checks to regenerate candidate/study/simulation reports and
+  exercise plotting, with numerical tolerance for solver outputs.
+- Assistance: review, code, documentation, and generated studies prepared with AI
+  assistance. Owner decisions are distinguished from suggested numerical assumptions.
+- Next personal work: dimensioned rotor/tilt layout, CG and load calculations,
+  component evidence, and a short explanation of the assumptions driving endurance.
+
+See [the prioritised review](repository-review.md) for outstanding additions.
+
 ## Entry template
 
 - Date, author, and time period:

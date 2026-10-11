@@ -3,6 +3,9 @@
   "evidence_status": "assumed; no hardware or flight measurements",
   "mass_kg": 3.0,
   "weight_n": 29.43,
+  "wingspan_m": 1.81659,
+  "mean_chord_m": 0.302765,
+  "wing_loading_n_m2": 53.509091,
   "rotor_disk_area_m2": 0.292247,
   "hover_thrust_per_rotor_n": 7.3575,
   "target_peak_thrust_per_rotor_n": 14.715,
@@ -16,6 +19,7 @@
   "nominal_battery_energy_wh": 111.0,
   "usable_battery_energy_wh": 88.8,
   "mission_energy_wh": 37.275126,
+  "mission_duration_s": 680.0,
   "remaining_usable_energy_wh": 51.524874,
   "mission_energy_within_budget": true
 }

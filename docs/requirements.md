@@ -1,31 +1,40 @@
 # Requirements and verification
 
-All numerical targets below are **proposed example targets**, not agreed design
-requirements or demonstrated capability. Confirm them against the mission and
-available resources before selecting components.
+Owner-confirmed targets are separate from engineering assumptions. A successful
+numerical screen is not demonstrated aircraft compliance.
 
-| ID | Requirement or proposed target | Verification | Current evidence |
+| ID | Requirement / status | Verification | Current evidence |
 | --- | --- | --- | --- |
-| R01 | Vertical take-off, wing-borne cruise, vertical landing | Reviewed dynamics model, then staged testing | Planned |
-| R02 | Tilt-rotor or tilt-wing architecture | Weighted trade study and decision review | Tilt-rotor calculation baseline only |
-| R03 | All-up mass at or below 3.0 kg, including 0.15 kg payload | Complete mass budget and assembled-aircraft measurement | Assumed mass budget |
-| R04 | Combined peak thrust target at least 2.0 times weight | Sourced motor/propeller data and thrust-stand measurement | Calculated target only |
-| R05 | Example mission: 60 s total hover, 20 s total transition, 600 s cruise at 18 m/s | Energy calculation, measured loads, validated mission model | Assumed analytical example |
-| R06 | Example mission energy at or below 80% of nominal battery energy | Conservative usable-energy estimate, then battery/load tests | Assumed 80% usable fraction |
-| R07 | Cruise speed greater than estimated stall speed | Lift calculation, then validated aerodynamic model | Calculation check only; flight margin not selected |
-| R08 | Configuration work permits propeller-off arming/disarming checks | Reviewed procedure and ground check | Planned |
-| R09 | Every powered test has configuration, conditions, measurements, and abort criteria recorded | Test-record review | Template available; no test records |
-| R10 | Python results can be reproduced from committed inputs | Automated numerical tests and report regeneration | Included in repository |
-
-## Unresolved constraints
-
-Budget, span and packaging limits, wind envelope, structural load cases, centre of
-gravity, stability margins, controller choice, tilt rate and actuator loading,
-maximum current, thermal limits, and local operating requirements remain open.
+| R01 | Four tilting rotors; confirmed | Geometry and interface review | Aggregate model; placement open |
+| R02 | All-up mass at most 5 kg; confirmed | Complete mass budget, then weighing | 3 kg assumed candidate; 5 kg stress case |
+| R03 | Wingspan below 1 m; confirmed, strict limit | Dimensioned CAD, then measurement | 0.949 m derived candidate span; no clearance evidence |
+| R04 | Total flight time at least 1800 s; confirmed target | Energy/load model, then validated mission evidence | Nominal energy screen conditional; upper-mass screen fails |
+| R05 | Search-and-rescue observation/basic surveillance concept; confirmed | Define sensor task and observation criteria | Camera/sensor and payload capability open |
+| R06 | Around GBP 500 parts; flexible owner target | Dated, complete BOM with inclusions | No parts priced; not assessed |
+| R07 | Design study plus hover/forward-transition simulation; confirmed scope | Reproducible results and documented model | Included; ideal attitude/trim, not aircraft validation |
+| R08 | Combined peak thrust target 2 times nominal weight; assumed | Sourced thrust/current curves, then measurement | 58.86 N target at 3 kg; hardware capability unknown |
+| R09 | Mission fits 80% usable nominal battery energy; assumed allowance | Battery discharge/load measurements and mission model | 88.8 Wh assumed usable; no measured energy |
+| R10 | Cruise above estimated stall; margin still to select | Aerodynamic evidence and validated model | Ratios 1.48 at 3 kg, 1.14 at 5 kg; not a safe-speed finding |
+| R11 | Results reproducible from committed inputs | Automated tests, report regeneration | Python 3.11/3.12 checks configured |
+| R12 | Powered work has reviewed procedures and abort criteria | Safety/configuration/test-record review | Plans only; no powered tests |
 
 ## Traceability
 
-R03 maps to `data/example_mass_budget.csv`. R04-R07 map to
-`analysis/calculations.py` and `reports/example/summary.md`. R08-R09 map to the
-safety and test plans. Record changes to targets in the decision log and identify
-which reports and checks need to be rerun.
+R01-R07 map to [the confirmed brief](../data/project_brief.json). R02-R04 and
+R08-R10 map to [candidate inputs](../data/sar_design.json),
+[mass allowances](../data/sar_mass_budget.csv), and
+[the design study](../reports/design-study/summary.md). R07 maps to the
+[simulation](../simulation/README.md). R11 maps to the tests and automated workflow.
+R12 maps to the [safety plan](safety.md) and [test plan](flight-test-plan.md).
+
+The 30-minute allocation is assumed: 60 s total hover, 50 s total transition, and
+1690 s cruise at 22 m/s. The energy model allows for both transitions, but only
+forward transition is dynamically simulated. This allocation is not yet a rescue
+mission profile with defined observation time, turns, wind, or reserve policy.
+
+## Open engineering requirements
+
+Define full-envelope size, sensor task/mass/power, wind and weather conditions,
+structural load factors, CG range, actuator loads/rates, control authority,
+current/thermal limits, budget inclusions, and supervision before hardware work.
+Do not fill these with arbitrary pass criteria merely to obtain a green result.

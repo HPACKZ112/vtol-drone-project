@@ -1,0 +1,12 @@
+component,quantity,unit_mass_kg,total_mass_kg,evidence,notes
+Wing and airframe,1,0.9,0.9,assumed,Preliminary allowance; geometry and structural mass not designed
+Tilting motors,4,0.09,0.36,assumed,No motor selected; four shared hover/cruise propulsion units
+Propellers,4,0.02,0.08,assumed,Diameter 0.305 m; clearance and operating data not checked
+ESCs,4,0.03,0.12,assumed,Current and voltage ratings to be selected
+Battery,1,0.7,0.7,assumed,Illustrative 22.2 V 5 Ah pack; no product or discharge data selected
+Tilt assemblies and servos,1,0.25,0.25,assumed,Combined allowance; mechanism and servo loads remain unverified
+Avionics,1,0.12,0.12,assumed,Controller and telemetry allowance; no hardware selected
+Wiring and connectors,1,0.12,0.12,assumed,Power distribution included; no ratings established
+Landing gear,1,0.1,0.1,assumed,Preliminary allowance
+Unselected observation payload,1,0.15,0.15,assumed,Placeholder only; camera/sensor and mount not selected by project owner
+Design contingency,1,0.1,0.1,assumed,Unallocated allowance; not a measured uncertainty

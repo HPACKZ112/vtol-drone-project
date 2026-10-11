@@ -1,2 +1,4 @@
-# Only plotting needs a third-party package. Core calculations use Python itself.
+# Sizing uses the standard library; simulation uses NumPy and SciPy.
+numpy==2.2.6
+scipy==1.15.3
 matplotlib==3.10.9

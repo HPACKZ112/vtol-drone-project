@@ -1,107 +1,115 @@
-# VTOL Drone Project
+# Compact Search-and-Rescue VTOL Design Study
 
 ![Python checks](https://github.com/HPACKZ112/vtol-drone-project/actions/workflows/project-check.yml/badge.svg)
 
-A student engineering project exploring a small electric aircraft with vertical
-take-off, wing-borne cruise, and vertical landing. The current study uses a
-**provisional four-rotor tilt-rotor configuration**; tilt-wing remains an option
-to compare before selecting an airframe.
+A second-year Mechanical Engineering project at the University of Exeter,
+investigating a **four-tilting-rotor aircraft** for search-and-rescue observation
+and basic aerial surveillance. The current deliverable is a design study with
+educational hover and forward-transition simulations, suitable for discussing
+engineering decisions in summer-placement interviews.
 
-**Status: preliminary design and analytical modelling.** This repository contains
-a reproducible worked example, engineering documentation, and a validation plan.
-It does not yet contain a built aircraft, measured propulsion data, flight logs,
-or a demonstrated transition controller. All example inputs are assumptions.
+**Status: preliminary, assumption-based study.** No aircraft has been built or
+flown, no components have been selected, and no model has been validated against
+measurements. The sensor payload is still open. The simulation assumes ideal
+attitude control; it is not a demonstrated aircraft controller.
 
-## Project at a glance
+## Design targets and first results
 
-| Item | Current scope |
-| --- | --- |
-| Engineering question | How do mass, rotor size, wing geometry, and mission time affect power and energy requirements? |
-| Design direction | Tilt-rotor or tilt-wing; tilt-rotor is the calculation baseline only |
-| Programming | Python functions, loops, dictionaries, CSV/JSON files, and unit tests |
-| Methods | Force balance, actuator-disc hover model, lift/drag equations, and energy accounting |
-| Evidence available | Reproducible example results and equation checks |
-| Evidence still needed | Component measurements, structural and stability checks, and controlled test results |
+| Item | Confirmed target | Current study |
+| --- | --- | --- |
+| Architecture | Four tilting rotors | Fixed-wing, aggregate four-rotor model |
+| All-up mass | At most 5 kg | 3 kg candidate; 5 kg stress case |
+| Wingspan | Below 1 m | 0.949 m from assumed area and aspect ratio; CAD pending |
+| Flight time | At least 30 minutes | Energy screen only, not demonstrated endurance |
+| Parts budget | Around GBP 500, flexible | Student prototype scope; priced BOM pending |
+| Payload | Observation sensor, not yet chosen | 0.15 kg mass allowance is an assumption |
+| Fabrication | Basic 3D printer, soldering, household DIY tools | Mechanism and fabrication plan pending |
 
-## Run the worked example
+The 3 kg case estimates **80.5 Wh** for a 30-minute mission against **88.8 Wh** of
+assumed usable energy. The 5 kg case needs **133.5 Wh** with the same battery and
+wing. The nominal case has little headroom, and uncertain drag/efficiency inputs
+can change the conclusion. The 5 kg limit is not a mass to design towards.
 
-Use Python 3.11 or newer. From the repository root:
+![Assumption-based sizing sensitivity](reports/sar/power_sensitivity.png)
+
+Read the [design study](reports/design-study/summary.md),
+[individual sizing report](reports/sar/summary.md), and
+[professional repository review](docs/repository-review.md) together.
+
+## Run the study
+
+Use Python 3.11 or 3.12 from the repository root:
 
 ```bash
 python -m venv .venv
 # Windows PowerShell:
 .venv\Scripts\Activate.ps1
-# macOS/Linux:
-# source .venv/bin/activate
+# macOS/Linux: source .venv/bin/activate
 python -m pip install -r requirements.txt
-python analysis/run_analysis.py
+python analysis/run_analysis.py --config data/sar_design.json --mass-budget data/sar_mass_budget.csv --output-dir reports/sar
+python -m analysis.run_design_study
+python -m simulation.run_simulation
 python -m unittest discover -s tests -v
 python tools/check_project.py
 ```
 
-The calculations and tests also run without installing any packages:
+Code uses functions, dictionaries, loops, NumPy arrays, and documented equations.
+SciPy supplies the established ODE solver rather than a handwritten integrator.
+The sizing calculation also runs without third-party packages using `--no-plots`;
+the numerical simulation needs the installed dependencies.
 
-```bash
-python analysis/run_analysis.py --no-plots
-```
+The [original tutorial](reports/example/summary.md) remains separate. Run
+`python analysis/run_analysis.py` to regenerate it. Its 1.817 m wing does **not**
+meet the compact project's span target.
 
-Edit [the example configuration](data/example_design.json) and
-[the mass budget](data/example_mass_budget.csv) to explore your own assumptions.
-Use `--config`, `--mass-budget`, and `--output-dir` to keep separate design cases.
-The script saves a report, summary JSON, and CSV tables; Matplotlib adds the plot.
+## Hover and forward transition
 
-## Example results
+![Educational forward transition, not aircraft validation](reports/simulation/transition.png)
 
-![Illustrative hover and cruise sensitivity plots](reports/example/power_sensitivity.png)
+The [simulation results](reports/simulation/summary.md) illustrate rotor-to-wing
+force sharing for 3 kg and 5 kg cases. Similar curves reflect ideal trim and
+mass-scaled control forces, not equal real-world feasibility. Read the
+[model derivation and limitations](simulation/README.md) before interpreting them.
+The simulation does not calculate endurance, reverse transition, or landing.
 
-The curves are analytical estimates using assumed inputs, not flight measurements.
-Read the [generated results](reports/example/summary.md) alongside the
-[equations and limitations](docs/calculations.md). The transition energy allowance
-is a budgeting assumption; it does not model transition dynamics.
+## Engineering evidence
 
-## Review the engineering work
-
-1. [Project brief](docs/project-brief.md): problem, scope, and deliverables.
-2. [Requirements](docs/requirements.md): proposed targets and verification methods.
-3. [Architecture](docs/architecture.md) and [decision log](docs/decision-log.md):
-   alternatives, trade-offs, and unresolved decisions.
-4. [Calculations](docs/calculations.md): equations, units, sources, and assumptions.
-5. [Results](reports/example/summary.md) and [tests](tests/README.md): what is checked.
-6. [Development log](docs/development-log.md): record dated work and lessons learned.
-7. [Portfolio evidence](docs/portfolio.md): connect personal contributions to evidence.
-
-## Repository layout
+1. [Project brief](docs/project-brief.md) and [requirements](docs/requirements.md).
+2. [Architecture](docs/architecture.md) and [decision log](docs/decision-log.md).
+3. [Sizing equations](docs/calculations.md) and [simulation model](simulation/README.md).
+4. [Review and necessary additions](docs/repository-review.md).
+5. [Verification](tests/README.md), [development log](docs/development-log.md), and
+   [portfolio evidence](docs/portfolio.md).
 
 ```text
-analysis/              Readable Python sizing functions and report generation
-data/                  Labelled example inputs; future measurement guidance
-docs/                  Brief, requirements, decisions, methods, and test planning
-hardware/              BOM, CAD guidance, and drawings
-firmware/              Future autopilot configuration and version records
-simulation/            Future dynamics and transition validation
-software/              Future Python log-analysis utilities
-reports/example/       Reproducible outputs from the assumed design case
-tests/                 Equation, input-validation, and report tests
-tools/                 Repository checks
-.github/               Automated checks and review templates
+analysis/              Sizing, target checks, and sensitivity studies
+data/                  Confirmed brief, assumed candidate, and tutorial inputs
+simulation/            Five-state point-mass hover/forward-transition model
+reports/sar/           Candidate sizing outputs
+reports/design-study/  Mass cases, sensitivity, and target screen
+reports/simulation/    Simulation input snapshots, tables, and plots
+reports/example/       Original tutorial outputs, not the compact aircraft
+docs/                  Requirements, methods, review, decisions, and safety
+hardware/              Component-selection and CAD evidence to develop
+tests/ and tools/      Equation, input, solver, and reproducibility checks
 ```
 
 ## Next milestones
 
-- [ ] Confirm mission, budget, and tilt-rotor versus tilt-wing choice.
-- [ ] Replace mass estimates with a sourced component shortlist and measurements.
-- [ ] Check thrust/current data against the calculated per-rotor requirement.
-- [ ] Add CAD, centre-of-gravity, structural, and stability evidence.
-- [ ] Validate hover and transition in an appropriate dynamics simulator.
-- [ ] Complete supervised ground testing before considering flight tests.
+- [ ] Lay out all rotor discs and tilt envelopes; calculate centre of gravity.
+- [ ] Calculate wing/attachment loads and tilt-actuator torque; add CAD/drawings.
+- [ ] Source compatible propulsion/battery data and a student-scale priced BOM.
+- [ ] Select an observation payload and update mass, power, and cost allowances.
+- [ ] Add attitude dynamics and geometry-based control authority to the model.
+- [ ] Compare predictions with supervised, repeatable measurements.
 
-See the [safety plan](docs/safety.md) and [staged test plan](docs/flight-test-plan.md)
-before planning hardware work. Numerical results alone do not establish readiness
-for powered testing or flight.
+See the [safety plan](docs/safety.md) and [staged test plan](docs/flight-test-plan.md).
+Numerical results do not establish readiness for powered testing or flight.
 
 ## Authorship and reuse
 
-The initial structure, example code, and documentation were prepared with AI
-assistance. Personal design decisions, measurements, and test outcomes should be
-recorded in the development log. Only claim work and results that you can explain
-and support with evidence. No open-source licence has been selected yet.
+The scaffold and this review/development pass were prepared with AI assistance.
+The project owner supplied the mission, constraints, architecture, and educational
+scope. Record personal calculations, design revisions, measurements, and code
+reviews in the development log. Claim only work and results you can explain and
+support. No open-source licence has been selected yet.

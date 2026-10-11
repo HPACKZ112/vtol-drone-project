@@ -1,0 +1,4 @@
+study_mass_kg,stall_speed_m_s,cruise_to_stall_ratio,hover_power_w,mission_energy_wh,usable_energy_wh,remaining_usable_energy_wh,nominal_energy_needed_wh,energy_within_budget
+2.5,13.615218,1.615839,269.790595,70.909041,88.8,17.890959,88.636301,True
+3.0,14.914724,1.475052,351.503605,80.483379,88.8,8.316621,100.604224,True
+5.0,19.254825,1.142571,744.798764,133.451088,88.8,-44.651088,166.813861,False

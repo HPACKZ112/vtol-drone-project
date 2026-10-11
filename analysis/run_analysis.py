@@ -15,9 +15,18 @@ else:
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def unique_json_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"Duplicate JSON field: {key}")
+        result[key] = value
+    return result
+
+
 def load_config(path):
     with Path(path).open(encoding="utf-8") as stream:
-        config = json.load(stream)
+        config = json.load(stream, object_pairs_hook=unique_json_object)
     if not isinstance(config, dict):
         raise ValueError("Configuration must be a JSON object.")
     for key in ("case_name", "evidence_status"):
@@ -38,6 +47,11 @@ def load_config(path):
         "zero_lift_drag_coefficient", "auxiliary_power_w", "hover_time_s",
         "transition_time_s", "cruise_time_s",
     ]
+    expected = set(positive_keys + fraction_keys + non_negative_keys
+                   + ["case_name", "evidence_status", "rotor_count"])
+    unknown = set(config) - expected
+    if unknown:
+        raise ValueError(f"Unknown configuration fields: {', '.join(sorted(unknown))}")
     for key in positive_keys:
         calc.positive(key, config.get(key))
     for key in fraction_keys:
@@ -54,25 +68,36 @@ def load_config(path):
 
 def load_mass_budget(path):
     rows = []
+    components = set()
     with Path(path).open(encoding="utf-8", newline="") as stream:
         reader = csv.DictReader(stream)
         required = {"component", "quantity", "unit_mass_kg", "evidence", "notes"}
-        if not required.issubset(reader.fieldnames or []):
-            raise ValueError("Mass budget is missing a required column.")
-        for row in reader:
-            component = row["component"]
-            if not component or not component.strip() or not row["evidence"]:
+        fields = reader.fieldnames or []
+        if len(fields) != len(set(fields)) or set(fields) != required:
+            raise ValueError("Mass budget must have one of each required column and no extra columns.")
+        for line_number, row in enumerate(reader, start=2):
+            if None in row or any(value is None for value in row.values()):
+                raise ValueError(f"Mass budget row {line_number} has the wrong number of cells.")
+            component = row["component"].strip()
+            evidence = row["evidence"].strip()
+            if not component or not evidence:
                 raise ValueError("Each mass item needs a component and evidence label.")
+            if component in components:
+                raise ValueError(f"Duplicate mass component: {component}")
+            components.add(component)
             quantity = int(row["quantity"])
             unit_mass_kg = float(row["unit_mass_kg"])
             calc.positive(f"quantity for {component}", quantity)
             calc.positive(f"unit mass for {component}", unit_mass_kg)
+            total_mass_kg = quantity * unit_mass_kg
+            calc.positive(f"total mass for {component}", total_mass_kg)
             rows.append({
                 "component": component,
                 "quantity": quantity,
                 "unit_mass_kg": unit_mass_kg,
-                "total_mass_kg": quantity * unit_mass_kg,
-                "evidence": row["evidence"],
+                "total_mass_kg": total_mass_kg,
+                "evidence": evidence,
+                "notes": row["notes"].strip(),
             })
     if not rows:
         raise ValueError("Mass budget must contain at least one component.")
@@ -117,6 +142,9 @@ def calculate_case(config, mass_kg):
         "evidence_status": config["evidence_status"],
         "mass_kg": mass_kg,
         "weight_n": weight,
+        "wingspan_m": math.sqrt(config["aspect_ratio"] * config["wing_area_m2"]),
+        "mean_chord_m": math.sqrt(config["wing_area_m2"] / config["aspect_ratio"]),
+        "wing_loading_n_m2": weight / config["wing_area_m2"],
         "rotor_disk_area_m2": area,
         "hover_thrust_per_rotor_n": weight / config["rotor_count"],
         "target_peak_thrust_per_rotor_n": (weight * config["thrust_to_weight_target"]
@@ -131,6 +159,7 @@ def calculate_case(config, mass_kg):
         "nominal_battery_energy_wh": config["battery_voltage_v"] * config["battery_capacity_ah"],
         "usable_battery_energy_wh": battery_energy,
         "mission_energy_wh": mission_energy,
+        "mission_duration_s": math.fsum(segment["duration_s"] for segment in segments),
         "remaining_usable_energy_wh": battery_energy - mission_energy,
         "mission_energy_within_budget": mission_energy <= battery_energy,
     }
@@ -202,12 +231,15 @@ def write_reports(output_dir, config, mass_rows, summary, segments,
     summary = rounded
     status = "Within the assumed energy budget" if summary["mission_energy_within_budget"] else "Exceeds the assumed energy budget"
     lines = [
-        "# Worked example results", "", f"Case: {config['case_name']}", "",
+        "# Preliminary sizing results", "", f"Case: {config['case_name']}", "",
         f"Evidence status: **{config['evidence_status']}**.", "",
         "Generated by `python analysis/run_analysis.py`. Input snapshots are in",
         "[inputs.json](inputs.json) and [mass_budget.csv](mass_budget.csv).", "",
         "## Baseline estimates", "", "| Quantity | Estimate |", "| --- | ---: |",
-        f"| All-up mass, including contingency | {summary['mass_kg']:.2f} kg |",
+        f"| All-up study mass | {summary['mass_kg']:.2f} kg |",
+        f"| Implied wingspan | {summary['wingspan_m']:.3f} m |",
+        f"| Mean chord | {summary['mean_chord_m']:.3f} m |",
+        f"| Wing loading | {summary['wing_loading_n_m2']:.1f} N/m^2 |",
         f"| Total rotor disc area | {summary['rotor_disk_area_m2']:.3f} m^2 |",
         f"| Hover thrust per rotor | {summary['hover_thrust_per_rotor_n']:.2f} N |",
         f"| Peak thrust target per rotor | {summary['target_peak_thrust_per_rotor_n']:.2f} N |",
@@ -228,6 +260,7 @@ def write_reports(output_dir, config, mass_rows, summary, segments,
                      f"{segment['power_w']:.1f} | {segment['energy_wh']:.2f} |")
     lines.extend([
         "", f"Total estimated mission energy: **{summary['mission_energy_wh']:.2f} Wh**.",
+        f"Total assumed mission time: **{summary['mission_duration_s'] / 60:.1f} minutes**.",
         f"Remaining usable energy: **{summary['remaining_usable_energy_wh']:.2f} Wh**.",
         f"Budget comparison: **{status}**.", "",
         "The usable fraction already excludes an assumed battery reserve. Remaining",
@@ -248,6 +281,41 @@ def write_reports(output_dir, config, mass_rows, summary, segments,
         "before using it to select hardware. Record differences and uncertainty.", "",
     ])
     (output_dir / "summary.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def plot_data(config, summary, mass_rows, speed_rows):
+    data = {
+        "case_name": config["case_name"],
+        "mass_kg": round(summary["mass_kg"], 6),
+        "hover_power_w": round(summary["electrical_hover_power_w"], 6),
+        "cruise_speed_m_s": round(config["cruise_speed_m_s"], 6),
+        "cruise_power_w": round(summary["electrical_cruise_power_w"], 6),
+    }
+    for name, rows in (("mass_sensitivity", mass_rows), ("cruise_sensitivity", speed_rows)):
+        data[name] = []
+        for row in rows:
+            data[name].append({key: round(value, 6) for key, value in row.items()})
+    return data
+
+
+def remove_stale_plot(output_dir, expected_data, chart_names=("power_sensitivity.png",),
+                      record_name="plot_data.json"):
+    charts = [Path(output_dir) / name for name in chart_names]
+    record = Path(output_dir) / record_name
+    if not any(chart.exists() for chart in charts):
+        return False
+    try:
+        saved_data = json.loads(record.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        saved_data = None
+    if saved_data == expected_data and all(chart.exists() for chart in charts):
+        return False
+    for chart in charts:
+        if chart.exists():
+            chart.unlink()
+    if record.exists():
+        record.unlink()
+    return True
 
 
 def make_plots(output_dir, config, summary, mass_rows, speed_rows):
@@ -275,6 +343,9 @@ def make_plots(output_dir, config, summary, mass_rows, speed_rows):
         axis.spines[["top", "right"]].set_visible(False)
     fig.savefig(Path(output_dir) / "power_sensitivity.png", dpi=160)
     plt.close(fig)
+    (Path(output_dir) / "plot_data.json").write_text(
+        json.dumps(plot_data(config, summary, mass_rows, speed_rows), indent=2) + "\n",
+        encoding="utf-8")
 
 
 def main():
@@ -290,6 +361,7 @@ def main():
         mass_kg = math.fsum(row["total_mass_kg"] for row in masses)
         summary, segments = calculate_case(config, mass_kg)
         mass_rows, speed_rows = sensitivity_tables(config, mass_kg)
+        removed_plot = remove_stale_plot(args.output_dir, plot_data(config, summary, mass_rows, speed_rows))
         write_reports(args.output_dir, config, masses, summary, segments, mass_rows, speed_rows)
         if not args.no_plots:
             make_plots(args.output_dir, config, summary, mass_rows, speed_rows)
@@ -303,6 +375,8 @@ def main():
     print(f"Remaining usable energy: {summary['remaining_usable_energy_wh']:.2f} Wh")
     if not summary["mission_energy_within_budget"]:
         print("WARNING: the assumed mission exceeds the usable battery energy budget.")
+    if removed_plot and args.no_plots:
+        print("Previous chart removed because its inputs changed. Rerun without --no-plots to plot this case.")
     print(f"Reports saved to {args.output_dir}")
 
 

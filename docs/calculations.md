@@ -1,7 +1,7 @@
 # Calculation methods and assumptions
 
 These models provide preliminary estimates for design comparisons. Every numeric
-input in the example is assumed. `analysis/calculations.py` contains scalar
+input in both the tutorial and compact candidate is assumed. `analysis/calculations.py` contains scalar
 equations; `analysis/run_analysis.py` loads inputs, combines them, and writes
 reports. Names include units where practical.
 
@@ -30,6 +30,17 @@ values for a selected aircraft. Keep `CD0` and lift coefficients referenced to
 the same wing area. Equal rotor loads and non-overlapping rotor discs are assumed.
 
 ## 1. Mass, weight, and thrust target
+
+### Wing geometry screen
+
+From the definition `AR = b^2/S`, span `b = sqrt(AR*S)` and reference mean
+chord `c = S/b`. Wing loading is `W/S`. This does not establish planform,
+thickness, rotor clearance, stiffness, or aerodynamic validity.
+
+The original tutorial's S=0.55 m^2 and AR=6 imply 1.817 m span; that case does
+not meet the owner's later below-1-m requirement. The separate compact candidate
+uses S=0.18 m^2 and AR=5, giving 0.949 m span and 0.190 m mean chord.
+Values in the symbol table above belong to the tutorial, not the compact case.
 
 ```text
 m = sum(quantity * unit_mass)
@@ -116,6 +127,15 @@ The fraction already excludes reserve; remaining usable energy is additional
 headroom, not total energy left in the pack. Battery sag, discharge-rate limits,
 temperature, ageing, and climb energy are not explicitly modelled.
 
+The compact candidate allocates 60 s hover, 50 s transition, and 1690 s cruise
+for 1800 s total. At 3 kg, estimated demand is 80.5 Wh against 88.8 Wh assumed
+usable. At 5 kg with the same battery/wing, demand rises to 133.5 Wh. Neither
+result demonstrates endurance. Increasing capacity adds mass: a fixed-mass
+energy-needed calculation is not a converged battery-sizing solution.
+
+The separate point-mass simulation does not calculate energy and does not replace
+the transition-power allowance. See [its derivation](../simulation/README.md).
+
 ## Verification and sensitivity
 
 Unit tests use independently evaluable numbers: thrust 8 N, density 1 kg/m^3,
@@ -132,6 +152,17 @@ The mass sweep varies mass from 70% to 130% of baseline with rotor size fixed.
 The speed sweep samples above 1.1 times the estimated stall speed and holds all
 other inputs fixed. That lower bound is for plotting only. The model does not
 establish a safe speed range or an optimal flight speed.
+
+`python -m analysis.run_design_study` checks confirmed mass/span/duration targets,
+compares mass cases, and varies individual assumptions by +/-20%. These are
+illustrative perturbations, not measured uncertainty intervals. Component cost
+and payload suitability explicitly remain unassessed.
+
+Generated mass snapshots retain evidence notes. Plot-data records identify the
+case, curves, and markers behind each sizing image. When `--no-plots` changes
+the recorded data, a mismatched chart is removed instead of left beside a new
+report. Matching records retain existing charts. After editing plotting/model
+code, regenerate plots even if inputs did not change.
 
 ## Next measurements
 

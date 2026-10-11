@@ -1,0 +1,8 @@
+{
+  "mass_within_limit": true,
+  "span_within_limit": true,
+  "duration_meets_target": true,
+  "energy_within_assumed_budget": true,
+  "cost_status": "Not assessed: no sourced component selections",
+  "payload_status": "Not assessed: camera/sensor is unselected"
+}

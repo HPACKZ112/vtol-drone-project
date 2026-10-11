@@ -17,6 +17,16 @@ REQUIRED_FILES = [
     "analysis/calculations.py", "analysis/run_analysis.py",
     "tests/test_calculations.py", "tests/test_analysis.py",
     "reports/example/summary.md", "reports/example/power_sensitivity.png",
+    "docs/repository-review.md", "data/project_brief.json", "data/sar_design.json",
+    "data/sar_mass_budget.csv", "analysis/run_design_study.py",
+    "simulation/planar.py", "simulation/run_simulation.py",
+    "tests/test_design_study.py", "tests/test_simulation.py",
+    "tools/check_simulation_reports.py", "reports/example/plot_data.json",
+    "reports/sar/summary.md", "reports/sar/power_sensitivity.png",
+    "reports/sar/plot_data.json", "reports/design-study/summary.md",
+    "reports/design-study/target_checks.json", "reports/simulation/summary.md",
+    "reports/simulation/hover.png", "reports/simulation/transition.png",
+    "reports/simulation/plot_inputs.json",
 ]
 
 

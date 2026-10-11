@@ -1,47 +1,52 @@
 # Project brief
 
-## Problem
+## Purpose and audience
 
-A VTOL aircraft must support its weight using rotors during hover, then use its
-wing during cruise. Tilting rotors or a tilting wing introduce extra mechanical
-and control requirements. This project asks how a student can turn that problem
-into a traceable preliminary design and testable engineering work.
+Investigate a compact electric four-tilting-rotor aircraft for search-and-rescue
+observation and basic surveillance. This is an educational engineering concept,
+not an operational rescue system or a market-ready product. The owner is a
+second-year Mechanical Engineering student at the University of Exeter, already
+applying for aerospace mechanical-engineering summer placements.
 
-## Objective
+## Confirmed scope
 
-Develop a documented concept for a small electric tilt-rotor or tilt-wing aircraft.
-Begin with reproducible sizing calculations, then replace assumptions with
-component evidence and validate the design in stages.
+- Design study plus simulated hover and forward transition.
+- Four tilting rotors, maximum all-up mass 5 kg, wingspan strictly below 1 m.
+- At least 30 minutes total flight time as a design target.
+- Approximately GBP 500 parts target, flexible for an achievable student prototype.
+- Camera/sensor unselected; basic 3D printer, soldering, and DIY tools available.
+
+These owner-confirmed facts are stored in [project_brief.json](../data/project_brief.json).
+No exact costs, selected parts, supervision, workshop access, or hardware results
+have been supplied. Budget inclusions and whether the size limit also applies to
+the full rotor envelope remain open.
 
 ## Current deliverables
 
-- A provisional mission and requirements with verification methods.
-- A mass budget and Python estimates of hover thrust/power, stall speed, cruise
-  drag/power, and mission energy.
-- Sensitivity plots and a written explanation of model limitations.
-- A decision log, BOM template, and staged validation plan.
+Readable Python sizing calculations, a candidate mass budget, a target screen,
+mass/efficiency sensitivity, and a five-state point-mass dynamics model. Supporting
+documents distinguish requirements from assumptions and verification from
+physical validation. The candidate 3 kg mass is a study assumption, not an owner
+requirement; the 5 kg case tests the upper limit with otherwise unchanged inputs.
 
-## Future deliverables
+Programming stays close to university material: functions, dictionaries, arrays,
+files, and tests. Calculus supplies Newton's differential equations; SciPy solves
+them with a documented, established method. There is no need to introduce a complex
+software architecture to demonstrate sound engineering reasoning.
 
-An architecture trade study, CAD and drawings, centre-of-gravity calculation,
-structural checks, propulsion measurements, and a validated dynamics model.
-Hardware or flight results should be added only after they exist and are reviewed.
+## Success criteria
 
-## Scope boundary
+Another student can reproduce outputs, explain units and equations, identify which
+assumptions drive the result, and propose measurements that would improve it.
+Mechanical evidence should next show geometry, loads, materials, assembly, and
+centre of gravity. A simulated smooth transition alone is not a success criterion
+for the physical aircraft: attitude/control authority and model validity are still
+unresolved.
 
-The current code performs preliminary scalar calculations. It does not implement
-an autopilot, attitude controller, tilt controller, or flight simulator. The
-transition power allowance is an energy estimate; it cannot establish transition
-stability. A future controller must have its own model, review, and validation.
+## Boundaries
 
-## Success criteria for this phase
-
-Another student can run the same inputs and obtain the same numerical outputs,
-trace each equation to a source or derivation, identify the largest uncertainties,
-and explain which measurements would improve the design.
-
-## Items to confirm
-
-Mission duration and payload; project budget and schedule; university supervision
-and facilities; available fabrication tools; operating location; selected VTOL
-layout; and the contribution of each team member.
+No aircraft autopilot, validated transition controller, flight-ready design, rescue
+deployment capability, thermal sensor performance, or measured endurance is claimed.
+Hardware testing depends on appropriate supervision, risk assessment, facilities,
+and applicable operating requirements. Return transition and landing are future
+simulation work, not covered by the present forward-transition model.

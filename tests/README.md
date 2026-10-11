@@ -3,14 +3,26 @@
 Run from the repository root:
 
 ```bash
+python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
+python tools/check_project.py
 ```
 
-The tests use Python's standard `unittest` module. They check independently
-evaluable equations, unit conversions, mass/rotor-size scaling, rejected physical
-inputs, mission energy accounting, and report generation from a different working
-directory without third-party packages.
+Tests use standard-library `unittest`. Coverage includes equations and units,
+mass/rotor-size scaling, physical input limits, malformed/ambiguous JSON/CSV,
+retained mass-budget notes, stale plot handling, report generation from another
+working directory, strict span/mass targets, upper-mass energy failure, force
+equilibrium, thrust/rate limits, and solver-step refinement.
 
-They establish consistency with the documented equations, not accuracy for a real
-aircraft. Compare predictions with calibrated measurements before claiming model
-validation. Hardware and flight validation belong in dated test records.
+Most tests run without third-party packages; the numerical solver test is skipped
+when SciPy is absent. Install the requirements for full verification. The sizing
+CLI can run with `--no-plots` independently of the scientific packages.
+
+The GitHub workflow runs Python 3.11 and 3.12, checks sizing/design-study reports
+against committed inputs, compares regenerated simulation CSVs with numerical
+tolerance, and smoke-tests chart generation. It does not compare PNG bytes across
+operating systems or establish scientific accuracy from a chart's appearance.
+
+These checks verify consistency with documented assumptions. Physical model
+validation requires calibrated, repeatable independent data. No aircraft, flight,
+or measured endurance validation is claimed.

@@ -1,0 +1,11 @@
+parameter,factor,mission_energy_wh,change_from_baseline_wh
+mass_kg,0.8,69.174043,-11.309336
+mass_kg,1.2,93.928687,13.445308
+zero_lift_drag_coefficient,0.8,72.147405,-8.335975
+zero_lift_drag_coefficient,1.2,88.819354,8.335975
+hover_figure_of_merit,0.8,83.329243,2.845863
+hover_figure_of_merit,1.2,78.586137,-1.897242
+cruise_propeller_efficiency,0.8,96.508361,16.024981
+cruise_propeller_efficiency,1.2,69.800058,-10.683321
+auxiliary_power_w,0.8,79.483379,-1.0
+auxiliary_power_w,1.2,81.483379,1.0

@@ -1,0 +1,19 @@
+{
+  "confirmed_on": "2026-10-11",
+  "course": "Mechanical Engineering, Year 2",
+  "university": "University of Exeter",
+  "portfolio_focus": "Mechanical engineering summer placements in aerospace",
+  "application_status": "Applications already underway",
+  "mission": "Search-and-rescue observation and basic aerial surveillance concept",
+  "architecture": "Four tilting rotors",
+  "maximum_mass_kg": 5.0,
+  "maximum_wingspan_m": 1.0,
+  "wingspan_limit_is_exclusive": true,
+  "minimum_flight_time_s": 1800.0,
+  "parts_budget_target_gbp": 500.0,
+  "budget_is_flexible": true,
+  "budget_scope": "Student prototype parts; exact inclusions to establish during component selection",
+  "payload_selection": null,
+  "available_tools": ["Basic 3D printer", "Soldering equipment", "Household DIY tools"],
+  "current_deliverable": "Design study with simulated hover and forward transition"
+}
