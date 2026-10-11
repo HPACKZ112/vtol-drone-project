@@ -145,6 +145,12 @@ and disc area 1 m^2 give induced velocity 2 m/s and ideal power 16 W. Energy
 conversion is checked with 100 W for 36 s = 1 Wh. Further checks cover input
 limits, physical trends, and report generation.
 
+The owner's [original hover equation sheet](personal-work.md) contains the same
+total-disc relations, without numerical substitutions. Its review adds units and
+AI-assisted 3 kg/5 kg examples. New checks compare individual equal-load rotor
+powers with the combined-disc power. The rough layout now makes CG/moment balance
+an explicit next step; it does not justify equal front/rear loading by itself.
+
 `math.fsum` reduces floating-point accumulation error in the mass and energy totals.
 Sizing summaries and CSV outputs are rounded to six decimal places before report formatting;
 the displayed digits do not represent measurement accuracy. A regression check

@@ -16,6 +16,32 @@ class CalculationTests(unittest.TestCase):
         self.assertAlmostEqual(calc.ideal_hover_power_w(8, 1, 1), 16)
         self.assertAlmostEqual(calc.electrical_hover_power_w(16, 0.5, 0.8, 2), 42)
 
+    def test_equal_rotor_powers_sum_to_combined_disc_result(self):
+        # Owner's equation sheet uses total weight with total area, not one disc.
+        count = 4
+        total_thrust = 29.43
+        single_area = math.pi * (0.305 / 2) ** 2
+        each_power = calc.ideal_hover_power_w(total_thrust / count, 1.225, single_area)
+        combined_power = calc.ideal_hover_power_w(
+            total_thrust, 1.225, calc.rotor_disk_area_m2(count, 0.305))
+        self.assertAlmostEqual(count * each_power, combined_power)
+
+    def test_personal_equation_sheet_numerical_examples(self):
+        # AI-assisted examples in docs/personal-work.md, not values in the photo.
+        area = calc.rotor_disk_area_m2(4, 0.305)
+        self.assertAlmostEqual(area, 0.292246657, places=8)
+        cases = [(3.0, 29.43, 7.3575, 188.680742, 351.503605),
+                 (5.0, 49.05, 12.2625, 405.976317, 744.798764)]
+        for mass, weight, each_thrust, ideal, electrical in cases:
+            with self.subTest(mass_kg=mass):
+                self.assertAlmostEqual(calc.weight_n(mass, 9.81), weight)
+                self.assertAlmostEqual(weight / 4, each_thrust)
+                power = calc.ideal_hover_power_w(weight, 1.225, area)
+                self.assertAlmostEqual(power, ideal, places=5)
+                self.assertAlmostEqual(
+                    calc.electrical_hover_power_w(power, 0.65, 0.85, 10),
+                    electrical, places=5)
+
     def test_stall_speed_hand_calculation(self):
         self.assertAlmostEqual(calc.stall_speed_m_s(10, 1, 2, 1), math.sqrt(10))
 

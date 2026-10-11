@@ -92,6 +92,21 @@ resolve that weakness.
    [decision brief](../reports/design-study/decision-brief.md) and
    [evidence map](evidence-map.md), without fabricated achievements or measurements.
 
+## Follow-up: owner artifacts received
+
+After this review, on 2026-10-11, the owner supplied a handwritten hover equation
+sheet and rough aircraft sketch, identifying both as their own work. They also
+confirmed rear rotors on the horizontal tail and all four tilting forward. See
+the [preserved originals and review](personal-work.md). Findings above describe
+the reviewed commit; this follow-up updates the evidence without rewriting it.
+
+Recruitment lens: personal artifacts are now visible, with honest attribution.
+Leadership lens: scope and mission duty cycle remain important open decisions.
+Engineering lens: equal-load equations are consistent, but numerical personal
+work, CG, dimensions, tail/boom loads and tilt mechanism evidence remain needed.
+The earlier ownership gap is partly addressed, not replaced by a claim of a
+validated design or unaided authorship of the Python repository.
+
 ## Combined next decision
 
 Confirm observation hover time and layout inputs, then develop one personally

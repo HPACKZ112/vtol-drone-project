@@ -14,13 +14,23 @@ measurements. The sensor payload is still open. The simulation assumes ideal
 attitude control; it is not a demonstrated aircraft controller.
 
 For a quick review: [decision brief](reports/design-study/decision-brief.md),
-[evidence map](docs/evidence-map.md), and [contributions](docs/contributions.md).
+[personal work](docs/personal-work.md), [evidence map](docs/evidence-map.md), and
+[contributions](docs/contributions.md).
+
+## Personal engineering work
+
+The owner has supplied a [handwritten hover equation sheet and rough aircraft
+sketch](docs/personal-work.md). The originals are preserved with a typed review,
+units and clearly labelled AI-assisted numerical examples. The rear rotor pair
+is intended to mount on the horizontal tail; all four rotors tilt forward for
+cruise. The sketch is not dimensioned, and the equations have not yet been
+supplemented by the owner's numerical substitutions or physical measurements.
 
 ## Design targets and first results
 
 | Item | Confirmed target | Current study |
 | --- | --- | --- |
-| Architecture | Four tilting rotors | Fixed-wing, aggregate four-rotor model |
+| Architecture | Four forward-tilting rotors; rear pair on horizontal tail | Owner concept; simulation still an aggregate-force model |
 | All-up mass | At most 5 kg | 3 kg candidate; 5 kg stress case |
 | Wingspan | Around 1 m, flexible guide; wing only | 0.949 m starting candidate; larger span may be considered |
 | Flight time | At least 30 minutes | Energy screen only, not demonstrated endurance |
@@ -81,6 +91,8 @@ The simulation does not calculate endurance, reverse transition, or landing.
 - [Decision brief](reports/design-study/decision-brief.md): purpose, result, limits, next decision.
 - [Evidence map](docs/evidence-map.md) and [contributions](docs/contributions.md):
   what exists, what is assumed, and what personal work is confirmed.
+- [Personal work](docs/personal-work.md): original hand equations and sketch,
+  review, units, and the next CG/load calculation.
 - [Three-lens review](docs/three-lens-review.md): simulated recruitment, leadership,
   and senior-engineering views across Airbus, Rolls-Royce and BAE Systems.
 - [Small design gates](docs/design-gates.md): finishable next steps.
@@ -100,6 +112,7 @@ structural/packaging consequences.
 4. [Review and necessary additions](docs/repository-review.md).
 5. [Verification](tests/README.md), [development log](docs/development-log.md), and
    [portfolio evidence](docs/portfolio.md).
+6. [Original personal artifacts and review](docs/personal-work.md).
 
 ```text
 analysis/              Sizing, target checks, and sensitivity studies
@@ -117,7 +130,8 @@ tests/ and tools/      Equation, input, solver, and reproducibility checks
 ## Next milestones
 
 - [ ] Lay out all rotor discs and tilt envelopes; calculate centre of gravity.
-- [ ] Calculate wing/attachment loads and tilt-actuator torque; add CAD/drawings.
+- [ ] Calculate wing, horizontal-tail/boom and attachment loads, plus tilt torque;
+      add CAD/drawings.
 - [ ] Source compatible propulsion/battery data and a student-scale priced BOM.
 - [ ] Select an observation payload and update mass, power, and cost allowances.
 - [ ] Add attitude dynamics and geometry-based control authority to the model.
@@ -130,6 +144,8 @@ Numerical results do not establish readiness for powered testing or flight.
 
 The scaffold and this review/development pass were prepared with AI assistance.
 The project owner supplied the mission, constraints, architecture, and educational
-scope. Record personal calculations, design revisions, measurements, and code
+scope, plus the original hand equation sheet and rough sketch. Typed review,
+numerical examples and added tests are AI-assisted, not unaided student work.
+Record personal calculations, design revisions, measurements, and code
 reviews in the development log. Claim only work and results you can explain and
 support. No open-source licence has been selected yet.

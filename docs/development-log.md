@@ -78,6 +78,26 @@ See [the prioritised review](repository-review.md) for outstanding additions.
 - AI assistance prepared the review, changes, tests and generated outputs.
   No physical measurements, selected hardware or completed personal CAD were added.
 
+## 2026-10-11 - Owner's first personal artifacts
+
+- Owner supplied a handwritten hover equation sheet and rough aircraft sketch,
+  identifying both as their own work. This is the receipt date, not a claimed
+  creation date. Preserved the original images unchanged in `docs/evidence/`.
+- Owner confirmed rear rotors mount on the horizontal tail and all four tilt
+  from upward hover thrust to forward cruise thrust. Dimensions, hinge axes,
+  actuator count, CG and detailed mounting remain open.
+- Added [personal-work review](personal-work.md) with typed equations, units,
+  explicit equal-load assumptions and AI-assisted 3 kg/5 kg numerical examples.
+  The photo itself has no numerical substitutions; those examples are not
+  attributed to the owner's hand calculation.
+- Added equation checks for summed per-rotor versus combined-disc ideal power
+  and the documented numerical examples. No sizing/simulation parameters changed.
+- Updated attribution/evidence records and identified tail/boom load path and
+  front/rear hover moment balance as the next mechanical questions.
+- Assistance: typed review, numerical examples, documentation and software checks
+  prepared with AI assistance. Personal numerical workings, CAD and measurements
+  are still to be supplied; preferred public name is still open.
+
 ## Entry template
 
 - Date, author, and time period:

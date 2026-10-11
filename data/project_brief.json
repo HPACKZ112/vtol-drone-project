@@ -6,6 +6,8 @@
   "application_status": "Applications already underway",
   "mission": "Search-and-rescue observation and basic aerial surveillance concept",
   "architecture": "Four tilting rotors",
+  "rear_rotor_mount": "Horizontal tail; owner-confirmed concept, not dimensioned geometry",
+  "rotor_tilt_intent": "All four change from upward thrust in hover to forward thrust in cruise",
   "maximum_mass_kg": 5.0,
   "wingspan_guide_m": 1.0,
   "wingspan_is_hard_limit": false,

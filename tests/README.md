@@ -31,3 +31,8 @@ New checks cover constant-duration hover exchanges, wing-comparison invariants,
 baseline reproduction, invalid geometry/duty cycles, and missing/extra/empty/
 malformed/nonfinite simulation tables. Reproducibility now requires all case
 files named by the simulation input snapshot, not just whichever CSVs remain.
+
+The personal-work review adds checks that equal-load individual rotor powers
+sum to the combined-disc result, and that the labelled 3 kg/5 kg numerical
+examples match the scalar equations. The owner's images contain no numerical
+results; these tests do not establish independently completed hand calculations.

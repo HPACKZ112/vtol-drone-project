@@ -12,7 +12,8 @@ A navigation aid, not a maturity score or aircraft approval.
 | Span changes have different consequences | [Wing cases](../reports/design-study/wing_span_cases.csv) | Fixed-mass/coefficients comparison | Structural mass/stiffness and aero evidence |
 | Hover/forward transition simulated | [Simulation](../reports/simulation/summary.md) | Point mass, ideal attitude/trim | Moments, inertia, allocation, actuator/aero data |
 | Numerical checks pass | Tests and GitHub workflow | Software verification | Not aircraft validation |
-| Personal mechanical work completed | [Contributions](contributions.md) | Not yet confirmed | Explainable personal artifacts |
+| Personal hover equation sheet and rough layout exist | [Originals and review](personal-work.md), [contributions](contributions.md) | Owner-identified work | Numerical hand substitutions, dimensions and load diagrams |
+| Rear pair on horizontal tail; all four tilt forward | [Architecture](architecture.md), [D13](decision-log.md) | Owner design intent | CG, clearance, tail/boom strength and tilt mechanism evidence |
 | Hardware/cost/sensor meet targets | [BOM](../hardware/bom.md) | Not assessed | Sourced selections, budget scope, measurements |
 
 Use confirmed requirement, assumed, modelled, verified implementation, and measured

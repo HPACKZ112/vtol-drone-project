@@ -32,6 +32,8 @@ REQUIRED_FILES = [
     "reports/design-study/inputs.json", "reports/design-study/decision-brief.md",
     "reports/design-study/hover_time_cases.csv", "reports/design-study/wing_span_cases.csv",
     "reports/design-study/decision_tradeoffs.png", "reports/design-study/tradeoff_plot_data.json",
+    "docs/personal-work.md", "docs/evidence/layout-sketch.jpg",
+    "docs/evidence/hover-hand-calculation.jpg",
 ]
 
 

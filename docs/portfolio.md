@@ -9,13 +9,19 @@ or flown aircraft.
 
 Begin with the [decision brief](../reports/design-study/decision-brief.md) and
 [evidence map](evidence-map.md). [Contributions](contributions.md) distinguish
-owner choices from AI-assisted artifacts and unconfirmed personal work. The
+owner choices and the supplied personal artifacts from AI-assisted review/code. The
 [three-lens review](three-lens-review.md) is simulated, not employer endorsement.
 
 Current context: second-year Mechanical Engineering at Exeter, applying now for
 mechanical-engineering summer placements in aerospace. A modest, explainable
 design study is appropriate; a market-ready rescue drone is not the expected
 deliverable. Prioritise mechanical reasoning and your own evidence.
+
+The [original handwritten equation sheet and rough layout](personal-work.md) now
+give two concrete personal artifacts to discuss. They support a claim of initial
+hover equations and concept sketching, not a dimensioned/mechanically verified
+design or a completed numerical hand check. Explain the equal-load assumption,
+why the CG matters, and the additional loads caused by rear rotors on the tail.
 
 | Contribution to document | Evidence to add | What to be ready to explain |
 | --- | --- | --- |
@@ -30,7 +36,8 @@ deliverable. Prioritise mechanical reasoning and your own evidence.
 
 - Add your name and actual personal contributions; course/year are now confirmed.
 - Record which code you wrote, adapted, or reviewed, and any assistance used.
-- Add one clear photograph or CAD view when an actual design exists.
+- Extend the existing personal equation sheet with numerical working and the
+  rough sketch with dimensions; add CAD once an actual model exists.
 - Choose two or three results you can reproduce and discuss without the script.
 - Make a short design report covering problem, method, evidence, and limitations.
 - Ensure every performance claim points to a dated measurement or labelled model.
