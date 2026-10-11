@@ -11,15 +11,17 @@ applying for aerospace mechanical-engineering summer placements.
 ## Confirmed scope
 
 - Design study plus simulated hover and forward transition.
-- Four tilting rotors, maximum all-up mass 5 kg, wingspan strictly below 1 m.
+- Four tilting rotors, maximum all-up mass 5 kg.
+- Around 1 m wingspan as a flexible guide, not a hard limit; wing only.
 - At least 30 minutes total flight time as a design target.
 - Approximately GBP 500 parts target, flexible for an achievable student prototype.
 - Camera/sensor unselected; basic 3D printer, soldering, and DIY tools available.
 
 These owner-confirmed facts are stored in [project_brief.json](../data/project_brief.json).
 No exact costs, selected parts, supervision, workshop access, or hardware results
-have been supplied. Budget inclusions and whether the size limit also applies to
-the full rotor envelope remain open.
+have been supplied. Budget inclusions remain open. Propellers may extend beyond
+the wing; no total-aircraft width limit has been specified. Rotor clearance and
+the complete tilt envelope still need to be documented.
 
 ## Current deliverables
 
@@ -28,6 +30,11 @@ mass/efficiency sensitivity, and a five-state point-mass dynamics model. Support
 documents distinguish requirements from assumptions and verification from
 physical validation. The candidate 3 kg mass is a study assumption, not an owner
 requirement; the 5 kg case tests the upper limit with otherwise unchanged inputs.
+
+The 0.949 m wing is a starting candidate, not an optimised span. A wider wing can
+be investigated where a documented aerodynamic, structural, mass, or packaging
+trade-off justifies it. The target screen reports span relative to the guide
+without marking a larger wing as a failed requirement.
 
 Programming stays close to university material: functions, dictionaries, arrays,
 files, and tests. Calculus supplies Newton's differential equations; SciPy solves

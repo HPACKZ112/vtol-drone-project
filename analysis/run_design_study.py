@@ -9,12 +9,12 @@ from analysis.run_analysis import (ROOT, calculate_case, load_config,
 
 def target_checks(config, mass_kg, brief):
     summary, _ = calculate_case(config, mass_kg)
-    span_ok = summary["wingspan_m"] < brief["maximum_wingspan_m"]
-    if not brief["wingspan_limit_is_exclusive"]:
-        span_ok = summary["wingspan_m"] <= brief["maximum_wingspan_m"]
     return {
         "mass_within_limit": mass_kg <= brief["maximum_mass_kg"],
-        "span_within_limit": span_ok,
+        "wingspan_m": summary["wingspan_m"],
+        "wingspan_guide_m": brief["wingspan_guide_m"],
+        "wingspan_difference_from_guide_m": summary["wingspan_m"] - brief["wingspan_guide_m"],
+        "wingspan_is_hard_limit": brief["wingspan_is_hard_limit"],
         "duration_meets_target": summary["mission_duration_s"] >= brief["minimum_flight_time_s"],
         "energy_within_assumed_budget": summary["mission_energy_within_budget"],
         "cost_status": "Not assessed: no sourced component selections",
@@ -67,14 +67,18 @@ def main():
     (output / "target_checks.json").write_text(json.dumps(checks, indent=2) + "\n", encoding="utf-8")
     lines = [
         "# Compact tilt-rotor design study", "",
-        "Confirmed targets: four tilting rotors; mass at most 5 kg; wingspan below",
-        "1 m; at least 30 minutes total flight time. The GBP 500 parts budget is a",
+        "Confirmed targets: four tilting rotors; mass at most 5 kg; at least",
+        "30 minutes total flight time. Around 1 m wingspan is a flexible guide,",
+        "not a hard limit, and applies to the wing only, not the rotor envelope.",
+        "The GBP 500 parts budget is a",
         "flexible student-project target. The observation payload is unselected.", "",
         "All numerical design inputs and component masses remain assumptions.",
         "These results screen a concept; they do not demonstrate aircraft performance.", "",
         f"The candidate geometry implies a **{baseline['wingspan_m']:.3f} m span** and",
         f"a **{baseline['mean_chord_m']:.3f} m mean chord**. Area is 0.18 m^2 and AR is 5.",
-        "This is a geometry candidate, not a completed CAD design.", "",
+        "This is a geometry candidate, not a completed CAD design. A larger span",
+        "may be considered through a documented mass, lift/drag, structure, and",
+        "packaging trade-off; exceeding the guide is not a requirement failure.", "",
         "## Mass cases", "",
         "The 5 kg row is an upper-mass stress case, not the intended all-up mass.",
         "Battery energy, wing, rotor size, and all other inputs stay fixed.", "",

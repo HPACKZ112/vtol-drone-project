@@ -11,8 +11,10 @@ The preliminary candidate has 0.18 m^2 wing area, aspect ratio 5, and four assum
 0.305 m rotor diameters. The resulting 0.949 m wing span is not proof that four
 rotor discs, their rotating tilt envelopes, wing, and ground clearance fit. A
 dimensioned layout must show disc separation, rotor/wing interference, landing
-clearance, tilt travel, and access for assembly. Keep the wing-span constraint
-distinct from total vehicle width until the owner defines the latter.
+clearance, tilt travel, and access for assembly. The owner clarified that around
+1 m is a flexible wingspan guide, not a hard cap or an overall vehicle-width
+limit. Propellers may extend beyond the wing. A larger wing can be considered
+with a documented aerodynamic, mass, structural, and packaging trade-off.
 
 ## Architecture trade-offs to document
 

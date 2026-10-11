@@ -11,7 +11,7 @@ python tools/check_project.py
 Tests use standard-library `unittest`. Coverage includes equations and units,
 mass/rotor-size scaling, physical input limits, malformed/ambiguous JSON/CSV,
 retained mass-budget notes, stale plot handling, report generation from another
-working directory, strict span/mass targets, upper-mass energy failure, force
+working directory, hard mass targets versus flexible span guidance, upper-mass energy failure, force
 equilibrium, thrust/rate limits, and solver-step refinement.
 
 Most tests run without third-party packages; the numerical solver test is skipped

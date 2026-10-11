@@ -38,7 +38,9 @@ chord `c = S/b`. Wing loading is `W/S`. This does not establish planform,
 thickness, rotor clearance, stiffness, or aerodynamic validity.
 
 The original tutorial's S=0.55 m^2 and AR=6 imply 1.817 m span; that case does
-not meet the owner's later below-1-m requirement. The separate compact candidate
+is substantially wider than the owner's approximately 1 m wingspan guide.
+The owner clarified that this guide is flexible and applies to the wing only.
+The separate compact candidate
 uses S=0.18 m^2 and AR=5, giving 0.949 m span and 0.190 m mean chord.
 Values in the symbol table above belong to the tutorial, not the compact case.
 
@@ -153,7 +155,8 @@ The speed sweep samples above 1.1 times the estimated stall speed and holds all
 other inputs fixed. That lower bound is for plotting only. The model does not
 establish a safe speed range or an optimal flight speed.
 
-`python -m analysis.run_design_study` checks confirmed mass/span/duration targets,
+`python -m analysis.run_design_study` checks confirmed mass/duration targets,
+reports span relative to the flexible guide without a hard span pass/fail,
 compares mass cases, and varies individual assumptions by +/-20%. These are
 illustrative perturbations, not measured uncertainty intervals. Component cost
 and payload suitability explicitly remain unassessed.

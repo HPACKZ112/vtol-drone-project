@@ -19,7 +19,7 @@ attitude control; it is not a demonstrated aircraft controller.
 | --- | --- | --- |
 | Architecture | Four tilting rotors | Fixed-wing, aggregate four-rotor model |
 | All-up mass | At most 5 kg | 3 kg candidate; 5 kg stress case |
-| Wingspan | Below 1 m | 0.949 m from assumed area and aspect ratio; CAD pending |
+| Wingspan | Around 1 m, flexible guide; wing only | 0.949 m starting candidate; larger span may be considered |
 | Flight time | At least 30 minutes | Energy screen only, not demonstrated endurance |
 | Parts budget | Around GBP 500, flexible | Student prototype scope; priced BOM pending |
 | Payload | Observation sensor, not yet chosen | 0.15 kg mass allowance is an assumption |
@@ -59,8 +59,9 @@ The sizing calculation also runs without third-party packages using `--no-plots`
 the numerical simulation needs the installed dependencies.
 
 The [original tutorial](reports/example/summary.md) remains separate. Run
-`python analysis/run_analysis.py` to regenerate it. Its 1.817 m wing does **not**
-meet the compact project's span target.
+`python analysis/run_analysis.py` to regenerate it. Its 1.817 m wing was not
+tailored to this project's approximately 1 m guide; a larger span needs a
+documented design trade-off.
 
 ## Hover and forward transition
 

@@ -7,7 +7,7 @@ numerical screen is not demonstrated aircraft compliance.
 | --- | --- | --- | --- |
 | R01 | Four tilting rotors; confirmed | Geometry and interface review | Aggregate model; placement open |
 | R02 | All-up mass at most 5 kg; confirmed | Complete mass budget, then weighing | 3 kg assumed candidate; 5 kg stress case |
-| R03 | Wingspan below 1 m; confirmed, strict limit | Dimensioned CAD, then measurement | 0.949 m derived candidate span; no clearance evidence |
+| R03 | Around 1 m wingspan; confirmed flexible guide, wing only | Compare candidate dimensions and trade-offs, then measure | 0.949 m starting candidate; no hard span pass/fail; rotor envelope separate |
 | R04 | Total flight time at least 1800 s; confirmed target | Energy/load model, then validated mission evidence | Nominal energy screen conditional; upper-mass screen fails |
 | R05 | Search-and-rescue observation/basic surveillance concept; confirmed | Define sensor task and observation criteria | Camera/sensor and payload capability open |
 | R06 | Around GBP 500 parts; flexible owner target | Dated, complete BOM with inclusions | No parts priced; not assessed |
@@ -34,7 +34,8 @@ mission profile with defined observation time, turns, wind, or reserve policy.
 
 ## Open engineering requirements
 
-Define full-envelope size, sensor task/mass/power, wind and weather conditions,
+Document full-envelope dimensions and clearance; no overall width limit is set.
+Define sensor task/mass/power, wind and weather conditions,
 structural load factors, CG range, actuator loads/rates, control authority,
 current/thermal limits, budget inclusions, and supervision before hardware work.
 Do not fill these with arbitrary pass criteria merely to obtain a green result.

@@ -48,6 +48,18 @@ test covers values immediately either side of the rounding boundary.
 
 See [the prioritised review](repository-review.md) for outstanding additions.
 
+## 2026-10-11 - Wingspan clarification
+
+- Owner clarified that the size guidance applies only to wingspan, not the
+  propeller envelope, and that approximately 1 m is flexible rather than a hard cap.
+- Updated the brief, requirements, architecture, and study output. Span is reported
+  relative to the guide rather than assigned a hard requirement pass/fail.
+- Added a regression check that a wing above 1 m is reported without hard rejection.
+- Kept the assumed 0.949 m geometry and all performance inputs unchanged; this
+  clarification alone does not improve predicted endurance or validate rotor clearance.
+- Next design work can compare larger spans while accounting for mass, structure,
+  lift/drag, rotor interference, and fabrication. Assistance: AI-assisted updates.
+
 ## Entry template
 
 - Date, author, and time period:

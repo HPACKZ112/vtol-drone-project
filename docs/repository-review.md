@@ -20,7 +20,7 @@ The project should not imply a built drone or a validated 30-minute rescue capab
 
 | Priority | Finding and original location | Consequence | Development status |
 | --- | --- | --- | --- |
-| P1 | `data/example_design.json`: S=0.55 m^2, AR=6 imply 1.817 m span | Tutorial cannot represent the owner's later sub-1-m aircraft | Separate 0.949 m compact candidate added; tutorial clearly labelled |
+| P1 | `data/example_design.json`: S=0.55 m^2, AR=6 imply 1.817 m span | Tutorial not tailored to the owner's compact approximately 1 m guide | Separate 0.949 m candidate added; owner later clarified span is flexible, wing-only |
 | P1 | `hardware/cad/README.md` and `hardware/bom.md`: placeholders only | Rotor packaging, CG, mechanism loads, materials, cost and propulsion feasibility unestablished | Remains essential work; no fabricated CAD or part choices |
 | P1 | `simulation/README.md`: no dynamics model | No evidence of hover/transition behaviour | Educational point-mass model added; attitude/transition validation still open |
 | P1 | `data/example_design.json` and example report: assumed efficiencies/aerodynamics | A positive energy balance cannot establish the requested endurance | Mission-specific mass/energy and sensitivity studies added; measurements still needed |
@@ -70,21 +70,25 @@ Select a licence before intending unrestricted public reuse.
 
 The owner confirmed Year 2 Mechanical Engineering at Exeter, university-level
 Python/NumPy and calculus, applications already underway, design study plus
-simulation, four tilting rotors, maximum 5 kg, below-1-m wing, at least 30 minutes,
+simulation, four tilting rotors, maximum 5 kg, approximately 1 m wing, at least 30 minutes,
 SAR/basic observation, basic fabrication tools, and a flexible student budget near
 GBP 500. No camera/sensor has been selected. These are recorded in
 [the brief](../data/project_brief.json), not replaced with invented decisions.
 
+The owner subsequently clarified that the span guide applies to the wing only
+and is flexible, not a hard limit. Propellers may extend beyond the wing; no
+total-width limit was set. Candidate span can change through a documented trade-off.
+
 ## Questions for the next design step
 
-- Does the below-1-m limit apply only to the wing, or also the full rotor envelope?
 - What observation task matters: visible camera, live feed, recording, or thermal?
   Sensor performance, mass, power, and cost should follow that task.
 - Which costs belong in the student budget, and what equipment is already owned?
 - Can a university supervisor/workshop support mechanical review and safe testing?
 
-These questions do not block the current preliminary study. Payload, costs,
-facilities, and full-envelope limits remain explicitly open until answered.
+These questions do not block the current preliminary study. Payload, costs, and
+facilities remain explicitly open until answered. Full-envelope dimensions and
+rotor clearance still need to be established by the mechanical layout.
 
 ## Evidence added in this pass
 
