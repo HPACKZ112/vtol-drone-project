@@ -1,0 +1,2 @@
+# Only plotting needs a third-party package. Core calculations use Python itself.
+matplotlib==3.10.9

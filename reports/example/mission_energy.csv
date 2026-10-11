@@ -1,0 +1,4 @@
+segment,power_w,duration_s,energy_wh
+hover,351.503605,60.0,5.858393
+transition allowance,419.804326,20.0,2.332246
+cruise,174.506917,600.0,29.084486

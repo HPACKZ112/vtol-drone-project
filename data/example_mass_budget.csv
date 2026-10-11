@@ -1,0 +1,12 @@
+component,quantity,unit_mass_kg,evidence,notes
+Wing and airframe,1,0.90,assumed,Includes structure and control surfaces
+Tilting motors,4,0.09,assumed,Same propulsion units used in hover and cruise
+Propellers,4,0.02,assumed,Diameter specified in example_design.json
+ESCs,4,0.03,assumed,One per motor
+Battery,1,0.70,assumed,Example 22.2 V 5 Ah pack; no product selected
+Tilt assemblies and servos,1,0.25,assumed,Combined illustrative mass allowance
+Avionics,1,0.12,assumed,Controller sensors and telemetry allowance
+Wiring and connectors,1,0.12,assumed,Power distribution included
+Landing gear,1,0.10,assumed,Preliminary allowance
+Payload,1,0.15,assumed,Development payload allowance
+Design contingency,1,0.10,assumed,Unallocated mass allowance

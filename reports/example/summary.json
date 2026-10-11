@@ -1,0 +1,21 @@
+{
+  "case_name": "Illustrative four-rotor tilt-rotor study",
+  "evidence_status": "assumed; no hardware or flight measurements",
+  "mass_kg": 3.0,
+  "weight_n": 29.43,
+  "rotor_disk_area_m2": 0.292247,
+  "hover_thrust_per_rotor_n": 7.3575,
+  "target_peak_thrust_per_rotor_n": 14.715,
+  "disk_loading_n_m2": 100.702606,
+  "ideal_hover_power_w": 188.680742,
+  "electrical_hover_power_w": 351.503605,
+  "stall_speed_m_s": 8.532379,
+  "cruise_to_stall_speed_ratio": 2.109611,
+  "cruise_drag_n": 5.437868,
+  "electrical_cruise_power_w": 174.506917,
+  "nominal_battery_energy_wh": 111.0,
+  "usable_battery_energy_wh": 88.8,
+  "mission_energy_wh": 37.275126,
+  "remaining_usable_energy_wh": 51.524874,
+  "mission_energy_within_budget": true
+}

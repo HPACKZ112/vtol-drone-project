@@ -1,0 +1,28 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+
+# Temporary results; curated inputs, CAD, and reports remain trackable
+work/
+data/raw/private/
+logs/
+*.log
+build/
+dist/
+
+# Credentials and private configuration
+.env
+.env.*
+secrets.*
